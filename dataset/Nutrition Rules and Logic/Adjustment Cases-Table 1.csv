@@ -1,0 +1,120 @@
+Table 1
+nutrient_delta = SUM(recommended_until_now) - SUM(consumed_until_now),,,,,,,,,,,,
+future_recommendation_adjustment = nutrient_delta / (remaining_meals*2 + remaining_snacks),,,,,,,,,,,,
+"adjustment = IF ( absolute_value (future_recommendation_adjustment) < 5% * future_meal_recommendation ? future_recommendation_adjustment : IF(future_recommendation_adjustment<0, -5% * future_meal_recommendation : 5% * future_meal_recommendation)",,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,6:00 AM,,12:00 PM,,2:00 PM,,5:00 PM,,,
+,,Recommended,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,,
+3:30 AM Pre-snack,Carbs,48.19415,40,,,,,,,,,
+,Protein,0,20,,,,,,,,,
+,Calories,463.755769338961,300,,,,,,,,,
+"6:30 AM 
+Meal",Carbs,95.7457113333333,,2.73138333333333,130,,,,,,,
+,Protein,43.6960293333333,,-2.18480146666667,50,,,,,,,
+,Calories,927.511538677922,,46.3755769338961,1000,,,,,,,
+"1:00 PM
+Pre-snack",Carbs,50.121916,,0,,0,40,,,,,
+,Protein,0,,0,,0,5,,,,,
+,Calories,463.755769338961,,0,,0,300,,,,,
+"3:30 PM
+Meal",Carbs,95.7457113333333,,2.73138333333333,,-4.78728556666667,,-4.78728556666667,95.7457113333333,,,
+,Protein,43.6960293333333,,-2.18480146666667,,-2.18480146666667,,-2.18480146666667,43.6960293333333,,,
+,Calories,927.511538677922,,46.3755769338961,,45.6336540084415,,46.3755769338961,927.511538677922,,,
+"5:30 PM
+Meal",Carbs,95.7457113333333,,2.73138333333333,,-4.78728556666667,,-4.78728556666667,,-4.78728556666667,,
+,Protein,43.6960293333333,,-2.18480146666667,,-2.18480146666667,,-2.18480146666667,,-2.18480146666667,,
+,Calories,927.511538677922,,46.3755769338961,,45.6336540084415,,46.3755769338961,,46.3755769338961,,
+,,,,,,,,,,,,
+"User did not add any consumed meals, so assume 100% consumption",,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,10:00 AM,,12:00 PM,,2:00 PM,,5:00 PM,,,
+,,Recommended,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,,
+"9:00 AM 
+Meal",Carbs,144,60,,,,,,,,,
+,Protein,72,25,,,,,,,,,
+,Calories,903,493,,,,,,,,,
+"11:00 AM 
+Snack",Carbs,72,,3.6,60,,,,,,,
+,Protein,19,,0.95,25,,,,,,,
+,Calories,451,,22.55,493,,,,,,,
+"1:00 PM
+Meal",Carbs,144,,7.2,,7.2,40,,,,,
+,Protein,72,,3.6,,3.6,5,,,,,
+,Calories,903,,45.15,,45.15,300,,,,,
+"4:00 PM
+Snack",Carbs,72,,3.6,,3.6,,3.6,72,,,
+,Protein,19,,0.95,,0.95,,0.95,19,,,
+,Calories,451,,22.55,,22.55,,22.55,451,,,
+"7:00 PM
+Meal",Carbs,144,,7.2,,7.2,,7.2,,7.2,,
+,Protein,72,,3.6,,3.6,,3.6,,3.6,,
+,Calories,903,,45.15,,45.15,,45.15,,45.15,,
+,,,,,,,,,,,,
+1.5 hours moderate endurance exercise @ 2pm,,,10:00 AM,,12:00 PM,,2:00 PM,,5:00 PM,,,
+,,Recommended,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,,
+"8:00 AM 
+Meal",Carbs,128,60,,,,,,,,,
+,Protein,44,25,,,,,,,,,
+,Calories,903,493,,,,,,,,,
+"10:00 AM 
+Meal",Carbs,172,,8.6,60,,,,,,,
+,Protein,37,,1.85,25,,,,,,,
+,Calories,903,,45.15,493,,,,,,,
+"1:00 PM
+Pre-Snack",Carbs,75,,0,,0,200,,,,,
+,Protein,0,,0,,0,30,,,,,
+,Calories,451,,0,,0,350,,,,,
+"3:30 PM
+Post-Snack",Carbs,72,,0,,0,,0,72,,,
+,Protein,24,,0,,0,,0,24,,,
+,Calories,451,,0,,0,,0,451,,,
+"6:30 PM
+Meal",Carbs,128,,6.4,,6.4,,6.4,,6.4,,
+,Protein,44,,2.2,,2.2,,0.5,,1,,
+,Calories,903,,45.15,,45.15,,45.15,,45.15,,
+,,,,,,,,,,,,
+,,,10:00 AM,,12:00 PM,,2:00 PM,,5:00 PM,,,
+,,Recommended,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,,
+"9:00 AM 
+Meal",Carbs,144,60,,,,,,,,,
+,Protein,37,25,,,,,,,,,
+,Calories,869,493,,,,,,,,,
+"11:00 AM 
+Snack",Carbs,72,,3.6,60,,,,,,,
+,Protein,19,,0.95,25,,,,,,,
+,Calories,435,,21.75,493,,,,,,,
+"1:00 PM
+Meal",Carbs,144,,7.2,,7.2,40,,,,,
+,Protein,37,,1.85,,1.85,5,,,,,
+,Calories,869,,43.45,,43.45,300,,,,,
+"4:00 PM
+Snack",Carbs,72,,3.6,,3.6,,3.6,72,,,
+,Protein,19,,0.95,,0.95,,0.95,19,,,
+,Calories,435,,21.75,,21.75,,21.75,435,,,
+"7:00 PM
+Meal",Carbs,144,,7.2,,7.2,,7.2,,7.2,,
+,Protein,37,,1.85,,1.85,,1.85,,1.85,,
+,Calories,869,,43.45,,43.45,,43.45,,43.45,,
+,,,,,,,,,,,,
+1.5 hours moderate endurance exercise @ 2pm,,,10:00 AM,,12:00 PM,,2:00 PM,,5:00 PM,,,
+,,Recommended,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,Consumed,Adjustments,,
+"8:00 AM 
+Meal",Carbs,129.2,120,,,,,,,,,
+,Protein,43.7,50,,,,,,,,,
+,Calories,869,881,,,,,,,,,
+"10:00 AM 
+Meal",Carbs,172.3,,8.615,142.5,,,,,,,
+,Protein,37.1,,-1.855,35,,,,,,,
+,Calories,869,,-12,865.5,,,,,,,
+"1:00 PM
+Pre-Snack",Carbs,71.8,,0,,0,71.8,,,,,
+,Protein,0,,0,,0,0,,,,,
+,Calories,434.5,,0,,0,434.5,,,,,
+"3:30 PM
+Post-Snack",Carbs,71.8,,0,,0,,0,71.8,,,
+,Protein,23.9,,0,,0,,0,23.9,,,
+,Calories,434.5,,0,,0,,0,434.5,,,
+"6:30 PM
+Meal",Carbs,129.2,,6.46,,6.46,,6.46,,6.46,,
+,Protein,43.7,,-2.185,,-2.1,,-2.1,,-2.185,,
+,Calories,869,,-12,,-4.25,,-4.25,,-8.5,,

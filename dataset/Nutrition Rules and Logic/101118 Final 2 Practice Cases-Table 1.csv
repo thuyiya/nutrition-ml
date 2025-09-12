@@ -1,0 +1,896 @@
+Table 1
+Practice Time,First >,5:00:00 AM,5:00:00 AM,5:00:00 AM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Second v,Duration (hrs),<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs,<1.5hr,>=1.5 & < 2.5hrs,>=2.5hrs
+10:00:00 AM,<1.5hr,"Pre-Snack - 1.5 before first exercise (start time of pre-snack should be 1.5 hours before start time of first exercise) 
+Meal - completion of first exercise (start time of meal should = end time of exercise) 
+Post-Snack - completion of second exercise (start time for snack should = the end time of exercise)   
+Meal - 2 after last meal (start time should be 2 hours after start time of previous meal or snack)      
+Meal - 3 after last meal (start time should be 3 hours after the start time of previous meal or snack) ",,"Pre-Snack - 1.5 before first exercise        
+Post-Snack - completion of first exercise        
+Pre Snack - 1 before second exercise        
+Meal - completion of second exercise        
+Meal - 3 after last meal        
+Meal - 3 after last meal        ","Pre-Snack - 1.5 before first exercise        
+Meal - completion of first exercise        
+Post-snack - completion of second exercise        
+Meal - 3 after last meal        
+Meal - 3 after last meal        ","Pre-Snack - 1.5 before first exercise        
+Post Snack - completion of first exercise        
+Meal - completion of second exercise        
+Meal - 3 after last meal        
+Meal - 3 after last meal",,"Pre-Snack - 1.5 before first exercise	
+Post Snack - completion of first exercise	
+Meal - completion of second exercise	
+Meal - 3 after last meal	
+Meal - 3 after last meal",,,"Pre-Meal	3 before first exercise	
+Pre-snack	1 before first exercise	
+Meal	completion of second exercise	
+Snack	3 after last meal	
+Meal	3 after last meal",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+10:00:00 AM,>=1.5 & < 2.5hrs,,,,"FAIL: 
+expected: 
+4:30 pre-snack
+7am meal
+12pm post-snack
+3pm meal
+6pm meal
+actual: 
+5:30am snack (should be at 4:30)
+7-8am snack (should be meal) 
+12-1pm meal (should be snack) 
+3-4 meal 
+6-7 meal ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+10:00:00 AM,>=2.5hrs,,,,fail - same as above,,,pass,pass,pass,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack - 1.5 before first exercise	
+Meal - completion of first exercise	
+Post-Snack - completion of second exercise	
+Meal - 2 after last meal	
+Meal - 3 after last meal",,,"Pre-Snack - 1.5 before first exercise        
+Meal - completion of first exercise        
+Post-snack - completion of second exercise        
+Meal - 3 after last meal        
+Meal - 3 after last meal
+expected: 
+4:30am snack
+6-7 exercise
+7am meal
+11-12 exercise
+12 snack
+3pm meal
+6pm meal
+actual: 
+4:30am snack
+6-7 exercise
+7-8am meal
+8-9am meal (incorrect) 
+11-12 exercise
+12-1pm snack 
+(3pm meal missing)
+6-7pm meal","expected: 
+4:30am snack
+6-8 exercise
+8am meal
+11-12 exercise
+12 snack
+3pm meal
+6pm meal
+actual: 
+4:30 snack 
+6-8 exercise
+8-9 meal 
+(duplicate 8-9am meal?) 
+11-12pm exercise
+12-1pm snack 
+MISSING 3PM MEAL 
+6-7pm meal","Pre-Snack - 1.5 before first exercise	
+Post Snack - completion of first exercise	
+Meal - completion of second exercise	
+Meal - 3 after last meal	
+Meal - 3 after last meal","Pre-Snack - 1.5 before first exercise        
+Meal - completion of first exercise        
+Post-snack - completion of second exercise        
+Meal - 3 after last meal        
+Meal - 3 after last meal","Pre-Snack	1.5 before first exercise	
+Post Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal	
+Meal	3 after last meal",,"Pre-Meal        3 before first exercise        
+Pre-snack        1 before first exercise        
+Meal        completion of second exercise        
+Snack        3 after last meal        
+Meal        3 after last meal        ",,,"Pre-Meal	3 before first exercise	
+Pre-snack	1 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	5 after last meal",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,"expected: 
+4:30am snack
+6-7 exercise
+7am meal
+11-1 exercise
+1pm snack
+4pm meal 
+7pm meal
+actual: 
+4:30am snack
+6-7b exercise
+7-8 meal
+8-9 meal (incorrect)
+11-1 exercise
+1-2pm snack 
+(4pm meal missing) 
+7-8pm meal ","expected: 
+4:30am snack
+6-8 exercise
+8am meal
+11-1 exercise
+1pm snack
+4pm meal 
+7pm meal
+actual: 
+4:30 snack 
+6-8 exercise
+8-9 meal 
+11-1 exercise
+1pm snack 
+MISSING 4PM MEAL
+7-8pm meal ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,"expected: 
+4:30 snack 
+6-7 exercise
+7-8 meal
+11-2pm exercise
+2pm post-snack
+5pm meal 
+8pm meal
+actual: 
+4:30 snack
+6-7 exercise
+7-8 snack (should be meal)
+11-2pm exercise
+2-3pm meal (should be snack)
+5-6 meal 
+8-9 meal ","expected: 
+4:30am snack
+6-8 exercise
+8am meal
+11-2 exercise
+2pm snack
+5pm meal 
+8pm meal
+actual: 
+4:30 snack 
+6-8 exercise
+8-9 snack (should be meal) 
+11-2pm exercise) 
+2-3pm meal (should be snack) 
+5-6 meal 
+8-9 meal ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack        1.5 before first exercise        
+Pre-Meal        completion of first exercise        
+Pre-Snack        1 before second exercise        
+Meal        completion of second exercise        
+Meal        3 after last meal",,,,,,"Pre-Snack - 1.5 before first exercise        
+Pre-Meal - completion of first exercise        
+Pre-Snack - 1 before second exercise        
+Meal - completion of second exercise        
+Meal - 3 after last meal",,"Pre-Snack - 1.5 before first exercise	
+Post-Snack - completion of first exercise	
+Pre-Snack - 1 before second exercise	
+Meal - completion of second exercise	
+Meal - 4 after last meal","Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise	
+Meal	4 after last meal	","Pre-Snack	1.5 before first exercise	
+Post-Snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal	",,"Pre-Meal	3 before first exercise	
+Pre-snack	1 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	5 after last meal	",,,"Pre-Meal        3 before first exercise        
+Pre-snack        1 before first exercise        
+Post-Snack        completion of first exercise        
+Meal        completion of second exercise        
+Meal        5 after last meal
+expected: 
+7am meal
+9am snack 
+10-11 exercise
+11am snack
+12-1pm exercise
+1pm meal
+6pm meal
+actual: 
+6-7:30am meal (correct, pre-meal range) 
+10am snack (wrong) 
+10-11 exercise
+11-12 snack 
+12-1pm exercise
+6pm meal ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,"expected: 
+7am pre-meal (6-7:30 range)
+9am snack 
+10-11 exercise
+11-12:30 snack 
+12-2 exercise
+2-3meal 
+5pm meal
+actual: 
+9-10am meal (incorrect)
+10-11am exercise
+11-12 snack 
+12-2 exercise
+1-2pm meal (incorrect) 
+4-5 snack (incorrect) 
+7-8 meal (incorrect",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,"observed: 
+9-10am meal 
+10-11am exercise
+11-12pm snack 
+12-3pm exercise
+1-2pm meal 
+4-5pm snack 
+7-8pm meal ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,,,,,,,"Pre-Snack - 1.5 before first exercise        
+Pre-Meal - completion of first exercise        
+Pre-Snack - 1 before second exercise        
+Meal - completion of second exercise        
+Meal - 3 after last meal
+FAIL - timings are correct but the Pre-meal is listed as a snack and the Pre-snack is listed as a meal","Pre-Snack - 1.5 before first exercise - pass     
+Pre-Meal - completion of first exercise fail - it's a snack      
+Pre-Snack - 1 before second exercise - fail, it's a meal
+Meal - completion of second exercise - pass
+Meal - 3 after last meal - pass",FAIL - timings are correct but the Pre-meal is listed as a snack and the Pre-snack is listed as a meal,"Pre-Snack        1.5 before first exercise        
+Pre-Meal        completion of first exercise        
+Pre-Snack        1 before second exercise        
+Meal        completion of second exercise        
+Meal        4 after last meal",,"Pre-Snack	1.5 before first exercise	
+Post-Snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal","Pre-Meal        2 before first exercise        
+Post-snack        completion of first exercise        
+Meal        completion of second exercise        
+Meal        3 after last meal .        Snack        2 after last meal",,,"Pre-Meal        3 before first exercise        
+Post-snack        completion of first exercise        
+Meal        completion of second exercise        
+Meal        3 after last meal        
+Snack        2 after last meal",,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal	
+Snack	2 after last meal",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,FAIL - timings are correct but the Pre-meal is listed as a snack and the Pre-snack is listed as a meal,FAIL - timings are correct but the Pre-meal is listed as a snack and the Pre-snack is listed as a meal,FAIL - timings are correct but the Pre-meal is listed as a snack and the Pre-snack is listed as a meal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,FAIL - timings are correct but the Pre-meal is listed as a snack and the Pre-snack is listed as a meal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Pre-Snack        1 before second exercise        
+Meal        completion of second exercise        
+Meal        2 after last meal        ",,,,,,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,,,,,"Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Post-Snack	completion of second exercise	
+Meal	3 after last meal	
+Snack	2 after last meal",,"Pre-Meal	3 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal	
+Snack	2 after last meal","Pre-Meal        3 before first exercise        
+Meal        completion of first exercise        
+Post-Snack        completion of second exercise        
+Meal        3 after last meal        
+Snack        2 after last meal
+FAIL - see comment","Pre-Meal	3 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal	
+Snack	2 after last meal",,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal	
+Snack	2 after last meal",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Post Snack	completion of second exercise	
+Meal	2 after last meal	",,,,,,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Post Snack	completion of second exercise	
+Meal	2 after last meal",,,,,,"Pre-Meal        3 before first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise        
+Post-snack     completion of second exercise   
+Meal        2 after last meal        ",,,"Pre-Meal        3 before first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise        
+Post-snack     completion of second exercise   
+Meal        2 after last meal        ",,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Post-snack	completion of second exercise	
+Meal	3 after last meal","Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,,"Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise       
+Meal       completion of second exercise",,,,,,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise       
+Meal       completion of second exercise",pass,pass,pass,,,"Pre-Meal        3 before first exercise        
+Pre-Meal        4 before second exercise        
+Pre-snack        1 before second exercise        
+Meal        completion of second exercise        
+snack        2 after last meal        ",,,"Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Pre-meal        3 before second exercise        
+Pre-snack         1 before first exercise   
+Meal        completion of first exercise",,,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Meal	completion of second exercise	
+Snack	3 after last meal",,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Post-Snack	completion of second exercise	
+Meal	2 after last meal","Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Post-Snack        completion of first exercise        
+Meal        completion of second exercise        
+Meal        3 after last meal",,"Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,,,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,"6:55-8:10 snack 
+5-8:25 exercise
+8:25-9:25 meal
+12-1:30 meal
+4:30-5:45 snack
+4-6pm exercise
+6-7 meal 
+correct, just ranges are still wrong",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,,,,,,,,,,,,,,,,,,,"Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Meal        completion of first exercise        
+Pre-Snack        1 before second exercise        
+Meal        completion of second exercise
+FAIL - see comment","expected: 
+8am pre-meal
+10am pre-snack
+11-1pm exercise
+1pm meal
+4pm pre-snack
+5-6pm exercise
+6pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-1pm exercise
+1-2pm meal
+4-5pm snack
+5-6pm exercise
+7-8pm meal (incorrect) ","expected: 
+8am pre-meal
+10am pre-snack
+11-2pm exercise
+2pm meal
+4pm pre-snack
+5-6pm exercise
+6pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-2pm exercise
+1-2pm meal (incorrect)
+4-5pm snack 
+5-6pm exercise
+7-8pm meal (incorrect)","Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise",,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise","Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Meal	completion of first exercise	
+Post-Snack	completion of second exercise	
+Meal	3 after last meal","Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Post-Snack	completion of first exercise	
+Meal	completion of second exercise	
+Meal	3 after last meal",,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,,,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise       
+Meal       completion of second exercise",,,,,,,,,,,,,,,"expected: 
+8am pre-meal
+10am pre-snack
+11-12pm exercise
+12-1pm meal
+4pm pre-snack
+5-7pm exercise
+7pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-12 exercise
+1-2pm meal (incorrect)
+4-5pm snack
+5-7pm exercise
+7-8pm meal","expected: 
+8am pre-meal
+10am pre-snack
+11-1pm exercise
+1pm meal
+4pm pre-snack
+5-7pm exercise
+7pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-1pm exercise
+1-2pm meal 
+4-5pm snack
+5-7pm exercise
+7-8pm meal","expected: 
+8am pre-meal
+10am pre-snack
+11-2pm exercise
+2pm meal
+4pm pre-snack
+5-7pm exercise
+7pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-2pm exercise
+1-2pm meal (incorrect)
+4-5pm snack
+5-6pm exercise
+7-8pm meal (incorrect)",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,"6:30-7:45am snack
+6-8am exercise
+8-9am meal
+1-2:30 meal
+6:30-7:45pm snack
+5-8pm exercise
+8-9pm meal",,,,,,,,,,,,,,"expected: 
+8am meal
+10am pre-snack
+11-12pm exercise
+12pm meal
+4pm pre-snack
+5-9pm exercise
+9pm meal
+actual: 
+9-10am meal (incorrect)
+11-12 snack (incorrect)
+11-12 exercise
+1-2pm meal (incorrect)
+4-5pm snack
+5-9pm exercise
+7-8pm meal (incorrect) ","expected: 
+8am meal
+10am pre-snack
+11am-1pm exercise
+1pm meal
+4pm pre-snack
+5-9pm exercise
+9pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-1pm exercise
+1-2pm meal
+4-5pm snack
+5-9pm exercise
+7-8pm meal (incorrect) ","expected: 
+8am pre-meal
+10am pre-snack
+11-2pm exercise
+2pm meal
+4pm pre-snack
+5-9pm exercise
+9pm meal
+actual: 
+9-10am meal (incorrect)
+11-12pm snack (incorrect)
+11-2pm exercise
+1-2pm meal (incorrect) 
+4-5pm snack 
+5-9pm exercise
+7-8pm meal (incorrect) ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise       
+Meal       completion of second exercise",,,,,,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Pre-Meal        3 before second exercise        
+Pre-Snack        1 before second exercise       
+Meal       completion of second exercise",,,,,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Pre-snack	1 before second exercise	
+Meal	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Pre-snack	1 before second exercise	
+Meal	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	2 after last meal	
+Meal	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,"Meal        7 before first exercise        
+Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Post-snack        completion of first exercise        
+Meal        completion of second exercise",,,,,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack        1.5 before first exercise        
+Meal        completion of first exercise        
+Meal        3 after last meal        
+Pre-Meal        3 before second exercise        
+Post-Snack        completion of second exercise        ",,,,,,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Meal	3 after last meal	
+Pre-Meal	3 before second exercise	
+Post-Snack	completion of second exercise",,,,,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Meal	4 before second exercise	
+Pre-snack	1 before second exercise	
+Meal	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Meal	4 before second exercise	
+Pre-snack	1 before second exercise	
+Meal	completion of second exercise",,,,,,,,,,,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise",,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Meal	completion of second exercise",,,,,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Meal	4 after last meal	
+Pre-Meal	3 before second exercise	
+Post-Snack	completion of second exercise	",,,,,,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Meal	4 after last meal	
+Pre-Meal	3 before second exercise	
+Post-Snack	completion of second exercise",,,,,,"Pre-Meal        3 before first exercise        
+Post-snack        completion of first exercise        
+Meal        6 before second exercise        
+Pre-meal        3 before second exercise        
+Post-snack        completion of second exercise
+FAIL - see comment! ","FAIL: EXPECTED: 
+6am meal
+9-11am exercise
+11am post-snack
+2:15pm meal
+5:15pm pre-meal
+8:15-9:15pm exercise
+9:15pm post-snack 
+WHAT I SAW: 
+9am-10am meal
+9-11am exercise
+11-12 snack
+1-2pm meal
+4-5pm meal
+7-8pm meal 
+8:15-9:15pm exercise","Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-meal	3 before second exercise	
+Pre Snack	1 before second exercise	
+Post-snack	completion of second exercise","Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Meal	6 before second exercise	
+Pre-meal	3 before second exercise	
+Post-snack	completion of second exercise","Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-meal	3 before second exercise	
+Pre Snack	1 before second exercise	
+Post-snack	completion of second exercise",,"Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Meal        completion of first exercise        
+Pre-Snack        1.5 before second exercise        
+Meal        completion of second exercise        
+observed: 
+7-8:30 meal
+10:30-11:45 snack
+11-12 exercise
+12-1pm meal
+7:30-8:45 snack 
+8-9pm exercise
+9-10pm meal",,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Snack	completion of second exercise","Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Meal        completion of first exercise        
+Pre-Meal        3 before second exercise        
+Post-Snack        completion of second exercise","Pre-Meal        3 before first exercise        
+Pre-Snack        1 before first exercise        
+Meal        completion of first exercise        
+Pre-Snack        1 before second exercise        
+Meal        completion of second exercise",,"Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Meal	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Post-snack	completion of second exercise",,"Meal        11 before first exercise        
+Meal        3 after last meal        
+Pre-meal        3 before first exercise        
+Post-snack        completion of first exercise        
+Post-snack        completion of second exercise
+FAIL - see comment",,,,,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,"FAIL: EXPECTED: 
+6am meal
+9-10am exercise
+10am post-snack
+2pm meal
+5pm meal
+8-9:59pm exercise
+9:59pm post-snack
+WHAT I SAW: 
+9-10am meal
+9-10am exercise
+11-12pm snack
+1-2pm meal
+4-5pm snack
+7-8pm meal
+8-9:59pm exercise","FAIL: EXPECTED: 
+6am meal 
+9-11am exercise
+11am post-snack 
+2pm meal
+5pm meal
+8-9:59pm exercise
+9:59pm post-snack 
+WHAT I SAW: 
+9-10am meal
+9-11am exercise
+11-12 snack
+1-2pm meal
+4-5pm meal
+7-8pm meal
+8-9:59pm exercise",,,,,,,,,,,,,,,,,,,,,,,,,,"FAIL
+expected: 
+7am meal
+10am meal
+3pm pre-meal
+6-7pm exercise
+7pm post-snack
+8-9:59pm exercise
+9:59pm post-snack
+actual: 
+9-10am meal
+11-12pm snack
+1-2pm meal
+4-5pm snack
+6-7pm exercise
+7-8pm meal
+8-9:59pm exercise
+",,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,BLOCKED by 10pm exercise limit,BLOCKED by 10pm exercise limit,,,,,blocked - can't schedule this event past 10pm,,,,,,,,,,,,,,,,,,,,,BLOCKED by 10pm limit,,,,,,,,,,,
+,<1.5hr,,,,,,,,,,,,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Meal	7 before second exercise	
+Pre-meal	3 before second exercise	
+Post-snack	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Meal	7 before second exercise	
+Pre-meal	3 before second exercise	
+Post-snack	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Snack	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Snack	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Pre Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Meal	3 before second exercise	
+Post-snack	completion of second exercise",,,,,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,"Meal	11 before first exercise	
+Meal	3 after last meal	
+Pre-meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Post-snack	completion of second exercise",,,"Meal	10 before first exercise	
+Meal	3 after last meal	
+Pre-meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Post-snack	completion of second exercise",,,,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,<1.5hr,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Meal	4 after last meal	
+Pre-Meal	3 before second exercise	
+Post-Snack	completion of second exercise	",,,,,,"Pre-Snack	1.5 before first exercise	
+Meal	completion of first exercise	
+Meal	4 after last meal	
+Pre-Meal	3 before second exercise	
+Post-Snack	completion of second exercise",,,,,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Meal	8 before second exercise	
+Pre-meal	3 before second exercise	
+Post-snack	completion of second exercise",,,"Pre-Meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Meal	8 before second exercise	
+Pre-meal	3 before second exercise	
+Post-snack	completion of second exercise",,,,,,,,,,,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,,,,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Meal	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise",,"Meal	7 before first exercise	
+Pre-Meal	3 before first exercise	
+Pre-Snack	1 before first exercise	
+Post-snack	completion of first exercise	
+Pre-Snack	1 before second exercise	
+Post-snack	completion of second exercise","Meal	11 before first exercise	
+Meal	3 after last meal	
+Pre-meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Post-snack	completion of second exercise",,,"Meal	10 before first exercise	
+Meal	3 after last meal	
+Pre-meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Post-snack	completion of second exercise",,"Meal	10 before first exercise	
+Meal	3 after last meal	
+Pre-meal	3 before first exercise	
+Post-snack	completion of first exercise	
+Post-snack	completion of second exercise",,,,,,
+,>=1.5 & < 2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,>=2.5hrs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,161,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

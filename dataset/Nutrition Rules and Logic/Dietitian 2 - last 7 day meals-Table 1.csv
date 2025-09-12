@@ -1,0 +1,10 @@
+Table 1
+"Meals consumed in last 7 days for memberId: Object(""5bab8c9bbd9a2100143433df"")",,,,
+,Meal ID,Calories,Carbs,Protein
+10-20,"ObjectId(""5a6b307b0774ce7ecfc63913"")",493,60,25
+10-22,"ObjectId(""5a6b2fcb0774ce7ecfc637fe"")",171,30,15
+10-22,"ObjectId(""5a6b2fb10774ce7ecfc637d4"")",248,30,15
+10-22,"ObjectId(""5a6b2fb10774ce7ecfc637d4"")",248,30,15
+10-23,"ObjectId(""5a6b30970774ce7ecfc63939"")",424,60,25
+10-23,"ObjectId(""5bcf41cbef5f7200141318e1"")",614.25,68.25,33.25
+,,2198.25,278.25,128.25

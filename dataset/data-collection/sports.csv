@@ -1,0 +1,89 @@
+_id,name,type,iconUrl,carbRatio,carbWeightRatio,carbsGain,carbsLose,carbsMaintain,enableKey,intenseHR,METs,moderateHR,proteinGain,proteinLose,proteinMaintain,proteinRatio,proteinWeightRatio,sportOfFocus
+5b64914eaa2da90014955127,Short-Distance Sprinting (100-400m),power,https://cdn-icons-png.flaticon.com/512/9958/9958325.png,0.5,6.0,4.2,2.8,3.5,,175.0,5.0,140.0,1.7,1.2,1.45,0.25,1.5,False
+5bc62108b46519d806a24009,Workout Run,endurance,https://cdn-icons-png.flaticon.com/512/10037/10037749.png,0.5,6.0,4.55,3.25,3.9,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da9001495512b,Speedskating,endurance,https://cdn-icons-png.flaticon.com/512/11432/11432014.png,0.5,6.0,7.0,5.0,6.0,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914eaa2da90014955120,Volleyball,power,https://cdn-icons-png.flaticon.com/512/10107/10107305.png,0.5,6.0,4.2,2.8,3.5,,150.0,5.0,115.0,1.7,1.4,1.55,0.25,1.5,False
+5b64914eaa2da90014955124,Cycling,endurance,https://cdn-icons-png.flaticon.com/512/5800/5800223.png,0.5,8.5,3.9,2.6,3.25,,180.0,5.0,150.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da90014955130,Triathlon,power,https://cdn-icons-png.flaticon.com/512/12156/12156013.png,0.5,6.0,3.5,2.1,2.8,,150.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914eaa2da90014955121,Diving,power,https://cdn-icons-png.flaticon.com/512/1653/1653907.png,0.5,4.5,3.5,2.1,2.8,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da9001495512d,Gymnastics,power,https://cdn-icons-png.flaticon.com/512/5623/5623351.png,0.5,3.5,3.5,2.1,2.8,,150.0,5.0,115.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da9001495512a,Soccer,endurance,https://cdn-icons-png.flaticon.com/512/27/27221.png,0.5,8.5,3.9,2.6,3.25,,175.0,5.0,145.0,1.7,1.4,1.55,0.25,1.5,False
+5b64914eaa2da90014955123,Squash,endurance,https://cdn-icons-png.flaticon.com/512/10032/10032330.png,0.5,10.5,3.9,2.6,3.25,,180.0,5.0,150.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da9001495512f,Wrestling,endurance,https://cdn-icons-png.flaticon.com/512/1653/1653900.png,0.5,6.0,4.2,2.8,3.5,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.8,False
+615c680667f5287340f886d0,Softball,endurance,https://cdn-icons-png.flaticon.com/512/10779/10779990.png,0.5,10.5,3.9,2.6,3.25,,190.0,5.0,120.0,1.7,1.2,1.45,0.25,1.5,False
+6195e41509f0023bfdd128df,EXOS 3 - Low,power,https://cdn-icons-png.flaticon.com/512/185/185606.png,0.25,7.0,4.2,2.8,3.5,EXOS,160.0,4.0,125.0,2.2,1.7,2.2,0.25,1.5,False
+5bfd7885b46519d806fb3b56,Field Hockey,endurance,https://cdn-icons-png.flaticon.com/512/5623/5623734.png,0.5,10.5,6.0,4.0,5.0,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+5bc620adb46519d806a23e09,Endurance Run,endurance,https://cdn-icons-png.flaticon.com/512/11962/11962590.png,0.5,6.0,4.55,3.25,3.9,,170.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da90014955129,Golf,power,https://cdn-icons-png.flaticon.com/512/39/39675.png,0.5,4.0,3.5,2.1,2.8,,110.0,5.0,90.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da90014955132,Tennis,endurance,https://cdn-icons-png.flaticon.com/512/120/120518.png,0.5,10.5,3.9,2.6,3.25,,170.0,5.0,135.0,1.7,1.2,1.45,0.25,1.5,False
+5d7fc622a0e4ecbfdf2be083,Lacrosse,endurance,https://cdn-icons-png.flaticon.com/512/37/37604.png,0.5,8.5,3.9,2.6,3.25,,175.0,5.0,145.0,1.7,1.4,1.55,0.25,1.5,False
+6195e3cf09f0023bfdd128dd,EXOS 2 - Moderate,power,https://cdn-icons-png.flaticon.com/512/9992/9992227.png,0.8,7.0,4.2,2.8,3.5,EXOS,160.0,6.0,125.0,2.2,1.7,2.2,0.35,1.5,False
+5b64914eaa2da90014955128,Baseball,power,https://cdn-icons-png.flaticon.com/512/10032/10032070.png,0.5,4.0,3.5,2.1,2.8,,140.0,5.0,115.0,1.7,1.2,1.45,0.25,1.5,False
+5becd05f142a9bafcaddb8ac,Exercise bike,endurance,https://cdn-icons-png.flaticon.com/512/822/822474.png,0.5,6.0,3.5,2.1,2.8,,150.0,5.0,115.0,1.7,1.2,1.45,0.25,1.5,False
+5b64914faa2da9001495512c,Basketball,endurance,https://cdn-icons-png.flaticon.com/512/353/353548.png,0.5,6.0,3.9,2.6,3.25,,180.0,5.0,150.0,1.7,1.4,1.55,0.25,1.5,False
+5b64914eaa2da90014955125,Football,power,https://cdn-icons-png.flaticon.com/512/27/27221.png,1.0,7.0,4.2,2.8,3.5,,160.0,6.0,125.0,2.2,1.7,2.2,0.35,1.5,False
+5b64914faa2da90014955131,Ice Hockey,endurance,https://cdn-icons-png.flaticon.com/512/37/37428.png,0.5,8.0,3.9,2.6,3.25,,175.0,5.0,125.0,1.7,1.4,1.55,0.25,1.5,False
+5b64914eaa2da90014955122,Martial Arts,power,https://cdn-icons-png.flaticon.com/512/9997/9997646.png,0.5,6.0,4.2,2.8,3.5,,120.0,5.0,100.0,1.7,1.2,1.45,0.25,1.5,False
+617845dbad6e5ed3ee669be7,Rugby,endurance,https://cdn-icons-png.flaticon.com/512/20/20730.png,0.5,8.5,3.9,2.6,3.25,,175.0,5.0,145.0,1.7,1.4,1.55,0.25,1.5,False
+619082dcd2fe512f06b55de1,EXOS 1 - Intense,power,https://cdn-icons-png.flaticon.com/512/9992/9992347.png,1.0,7.0,4.2,2.8,3.5,EXOS,160.0,8.0,125.0,2.2,1.7,2.2,0.35,1.5,False
+6195e45b09f0023bfdd128e3,EXOS 4  - High (Position),power,https://cdn-icons-png.flaticon.com/512/9992/9992706.png,0.5,7.0,4.2,2.8,3.5,EXOS,160.0,8.0,125.0,2.2,1.7,2.2,0.5,1.5,False
+6195e47c09f0023bfdd128e5,EXOS 5 - Low,power,https://cdn-icons-png.flaticon.com/512/185/185614.png,0.25,7.0,4.2,2.8,3.5,EXOS,160.0,5.0,125.0,2.2,1.7,2.2,0.25,1.5,False
+61b778f24b607efa735e45ca,EXOS Off-Season,power,https://cdn-icons-png.flaticon.com/512/4016/4016683.png,0.25,7.0,4.5,2.0,3.5,EXOS,160.0,6.0,125.0,1.8,2.0,2.2,0.25,1.5,False
+5becd05f142a9bafcaddb8ae,Yoga/Stretching,power,https://cdn-icons-png.flaticon.com/512/10/10699.png,0.5,6.0,3.5,2.1,2.8,,110.0,5.0,90.0,1.7,1.2,1.45,0.25,1.5,False
+5becd05f142a9bafcaddb8af,Injury Prevention,power,https://cdn-icons-png.flaticon.com/512/12310/12310115.png,0.5,6.0,3.5,2.1,2.8,,110.0,5.0,90.0,1.7,1.2,1.45,0.25,1.5,False
+5bc62083b46519d806a23d0d,Weights,power,https://cdn-icons-png.flaticon.com/512/55/55259.png,0.5,6.0,4.2,2.8,3.5,,150.0,5.0,115.0,1.7,1.4,1.55,0.25,1.5,False
+5b64914eaa2da90014955126,Rowing,endurance,https://cdn-icons-png.flaticon.com/512/6437/6437503.png,0.5,6.0,3.9,2.6,3.25,,175.0,5.0,140.0,1.7,1.2,1.45,0.25,1.5,False
+5becd05f142a9bafcaddb8ad,High Intensity Interval training,endurance,https://cdn-icons-png.flaticon.com/512/9992/9992375.png,0.5,6.0,3.5,2.1,2.8,,180.0,5.0,140.0,1.7,1.2,1.45,0.25,1.5,False
+5d7bd96da0e4ecbfdf141912,Swimming- Sprint,endurance,https://cdn-icons-png.flaticon.com/512/763/763950.png,0.5,10.5,3.9,2.6,3.25,,160.0,5.0,120.0,1.7,1.2,1.45,0.25,1.5,False
+5d7bd98aa0e4ecbfdf141978,Swimming- Mid Distance,endurance,https://cdn-icons-png.flaticon.com/512/2932/2932366.png,0.5,10.5,3.9,2.6,3.25,,190.0,5.0,120.0,1.7,1.2,1.45,0.25,1.5,False
+5d7bd9a9a0e4ecbfdf141a0a,Swimming- Distance,endurance,https://cdn-icons-png.flaticon.com/512/726/726833.png,0.5,10.5,3.9,2.6,3.25,,175.0,5.0,120.0,1.7,1.2,1.45,0.25,1.5,False
+6232d42cdd7c8a09b1fff35e,EXOS Lean Out,power,https://cdn-icons-png.flaticon.com/512/10062/10062717.png,0.25,7.0,3.0,3.0,3.0,EXOS,160.0,6.0,125.0,2.2,2.2,2.2,0.25,1.5,False
+629f8569e8a1f804e430a2ea,High Protein/2g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,2.0,2.0,2.0,EXOS,160.0,4.0,125.0,2.2,2.2,2.2,0.25,1.5,True
+629f8597e8a1f804e430a2ec,High Protein/3g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,3.0,3.0,3.0,EXOS,160.0,4.0,125.0,2.2,2.2,2.2,0.25,1.5,True
+629f85b3e8a1f804e430a2ee,High Protein/4g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,4.0,4.0,4.0,EXOS,160.0,4.0,125.0,2.2,2.2,2.2,0.25,1.5,True
+629f85d2e8a1f804e430a2f0,High Protein/5g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,5.0,5.0,5.0,EXOS,160.0,4.0,125.0,2.2,2.2,2.2,0.25,1.5,True
+629f85efe8a1f804e430a2f2,High Protein/6g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,6.0,6.0,6.0,EXOS,160.0,4.0,125.0,2.2,2.2,2.2,0.25,1.5,True
+629f8613e8a1f804e430a2f4,Low Protein/2g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,2.0,2.0,2.0,EXOS,160.0,4.0,125.0,1.8,1.8,1.8,0.25,1.5,True
+629f865de8a1f804e430a2f6,Low Protein/3g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,3.0,3.0,3.0,EXOS,160.0,4.0,125.0,1.8,1.8,1.8,0.25,1.5,True
+629f8673e8a1f804e430a2f8,Low Protein/4g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,4.0,4.0,4.0,EXOS,160.0,4.0,125.0,1.8,1.8,1.8,0.25,1.5,True
+629f8693e8a1f804e430a2fa,Low Protein/5g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,5.0,5.0,5.0,EXOS,160.0,4.0,125.0,1.8,1.8,1.8,0.25,1.5,True
+629f8701e8a1f804e430a2fc,Low Protein/6g,power,https://cdn-icons-png.flaticon.com/512/2736/2736292.png,0.25,7.0,6.0,6.0,6.0,EXOS,160.0,4.0,125.0,1.8,1.8,1.8,0.25,1.5,True
+63440f363f4994a01ce024e5,MD-1,power,https://cdn-icons-png.freepik.com/512/7676/7676175.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+634411a93f4994a01ce024e9,MD,power,https://cdn-icons-png.freepik.com/512/5594/5594624.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+634411d13f4994a01ce024eb,MD+1,power,https://cdn-icons-png.freepik.com/512/3788/3788669.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+634411f53f4994a01ce024ed,Heavy training day,power,https://cdn-icons-png.flaticon.com/512/9925/9925079.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+634412313f4994a01ce024ef,Moderate training day,power,https://cdn-icons-png.flaticon.com/512/6793/6793958.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+6344124f3f4994a01ce024f1,Light training day,power,https://cdn-icons-png.flaticon.com/512/10136/10136171.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+634412823f4994a01ce024f3,Rest day,power,https://cdn-icons-png.flaticon.com/512/7027/7027537.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+636a6f44ebcd04e9efd5d987,Cricket,power,https://cdn-icons-png.flaticon.com/512/10/10552.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64099f3a8a24db1fcf7e4677,Recreational Athlete,power,https://cdn-icons-png.flaticon.com/512/11981/11981625.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+6409a00e8a24db1fcf7e4679,General Population,power,https://cdn-icons-png.flaticon.com/512/6591/6591691.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+6409be9c8a24db1fcf7e467f,Walking,power,https://cdn-icons-png.flaticon.com/512/9638/9638520.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+6409beb18a24db1fcf7e4681,Light Movement,power,https://cdn-icons-png.flaticon.com/512/72/72088.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+643639f45f1d13e13b116657,Ski-Snowboard,endurance,https://cdn-icons-png.flaticon.com/512/3912/3912446.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+646245eadeacfe523a9a4b8f,Off Season Off Day,power,https://cdn-icons-png.flaticon.com/512/10569/10569171.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64990b8b7fef9d4435f45913,Test Sport Zonein,power,https://cdn-icons-png.freepik.com/512/9129/9129225.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b62fc7809e3a57ae15d557,OSP Off Day,power,https://cdn-icons-png.flaticon.com/512/3895/3895063.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b62fdc809e3a57ae15d559,GD -1 Walk Through,power,https://cdn-icons-png.flaticon.com/512/10062/10062731.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63f71809e3a57ae15d55b,Regen,power,https://cdn-icons-png.freepik.com/512/2277/2277857.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63f86809e3a57ae15d55d,"Yoga, Pilates, Golf",power,https://cdn-icons-png.flaticon.com/512/84/84145.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63f9a809e3a57ae15d55f,RS Off Day (<60% Snaps),power,https://cdn-icons-png.flaticon.com/512/3029/3029855.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63fac809e3a57ae15d561,GD (P Squad & Inactive),power,https://cdn-icons-png.freepik.com/512/14719/14719391.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63fc2809e3a57ae15d563,<60min Workout,power,https://cdn-icons-png.freepik.com/512/3171/3171156.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63fd5809e3a57ae15d565,TC Off Day,power,https://cdn-icons-png.freepik.com/512/10049/10049691.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63fee809e3a57ae15d567,GD +1 (<60% Snaps),power,https://cdn-icons-png.freepik.com/512/14719/14719391.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b63ffe809e3a57ae15d569,RS Off Day (>60% Snaps),power,https://cdn-icons-png.flaticon.com/512/4115/4115518.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b64010809e3a57ae15d56b,GD -2 Practice,power,https://cdn-icons-png.freepik.com/512/14719/14719391.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b64020809e3a57ae15d56d,GD (<60% Snaps),power,https://cdn-icons-png.freepik.com/512/14719/14719391.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b64033809e3a57ae15d56f,Phase II Practice,power,https://cdn-icons-png.flaticon.com/512/9544/9544518.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b64043809e3a57ae15d571,GD +1 (>60% Snaps),power,https://cdn-icons-png.freepik.com/512/1841/1841488.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b64056809e3a57ae15d573,>60min Workout,power,https://cdn-icons-png.freepik.com/512/3000/3000699.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b6406b809e3a57ae15d575,OTA Practice,power,https://cdn-icons-png.flaticon.com/512/2256/2256982.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b6407b809e3a57ae15d577,TC Helmet/Shells Practice,power,https://cdn-icons-png.freepik.com/512/8168/8168449.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b6408e809e3a57ae15d579,GD -3/4 Practice,power,https://cdn-icons-png.freepik.com/512/14719/14719391.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b640b0809e3a57ae15d57b,TC Full Pads Practice,power,https://cdn-icons-png.freepik.com/512/10051/10051540.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+64b640c0809e3a57ae15d57d,Game Day (>60% Snaps),power,https://cdn-icons-png.flaticon.com/512/4456/4456917.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+65112686b867088170fe2ccd,Boxing,endurance,https://cdn-icons-png.flaticon.com/512/1804/1804583.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+65cb21f52515febe99d1ff3b,General Fitness,power,https://cdn-icons-png.flaticon.com/512/2382/2382633.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+65d57dcf1b3b71d073c285f3,Elliptical,endurance,https://cdn-icons-png.flaticon.com/512/9992/9992254.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False
+65dc745b85165701b0f6571e,Netball,power,https://cdn-icons-png.flaticon.com/512/9938/9938036.png,0.5,6.0,4.0,2.5,3.25,,160.0,5.0,125.0,1.7,1.2,1.45,0.25,1.5,False

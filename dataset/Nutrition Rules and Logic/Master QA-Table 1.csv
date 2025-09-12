@@ -1,0 +1,28 @@
+Table 1
+Birthday,3/21/2000,,STEP 1,Duplicate this sheet,,,,
+Age in years,25.4194444444444,,STEP 2,"Complete ""Calorie Calculations"" cells B15:B21",,,,
+Gender,Male,,STEP 3,"Add your ""sport"" in B22 of ""Nutrition Rules - Summary"" and use that along with the weight goal to find B24 and B25 from ""Activity <> Macronutrient Requirement Map"" sheet",,,,
+Weight (lbs),160,,STEP 4,"Copy / paste (as values) B1:B16 so they don't change if ""Calorie Calculations"" or ""Nutrition Rules - Summary"" sheets change",,,,
+Height (in),70,,STEP 5,Keep track of recommendations in the Actual Schedule table below,,,,
+Body fat %,0%,,STEP 6,"Follow A1:D10 in ""Nutrition Rules - Summary"" section to fill in Correct Schedule below",,,,
+Activity,Heavy Activity,,,,,,,
+Weight Goal,Maintain Weight,,,,,,,
+Weight (kg),72.57472,,,,,,,
+Height (cm),177.8,,,,,,,
+Lean Body Mass (kg),,,,,,,,
+,,,,,,,,
+,No Exercise,1 Exercise,2 Exercise,,,,,
+Correct Daily Calories,2495.32,2495.32,2495.32,,,,,
+Correct Daily Carbs,326.58624,362.8736,399.16096,,,,,
+Correct Daily Protein,112.490816,112.490816,112.490816,,,,,
+,,,,,,,,
+Recommendations,,,,,,,,
+,Actual Schedule,Carbs,Protein,Calories,Correct Schedule,Carbs,Protein,Calories
+Day 1,4am snack,104,0,224,Meal - 9am,72.6654384,33.112216,623.83
+,5am meal,240,31,448,Pre-Meal - 3hr before exercise,97.975872,28.122704,623.83
+,8am meal,183,37,448,Pre-Snack - 1hr before exercise,42.4562112,0,311.91
+,8am snack,91,18,224,4:49pm moderate endurance for 1 hour,,,
+,4:49pm moderate endurance for 1 hour,,,,Post-Snack - on completion of exercise,40.82328,18.14368,311.91
+,5:49pm meal,183,37,448,Meal - 3hr after completion of exercise,72.6654384,33.112216,623.83
+,Total,801,123,1792,Total,326.58624,112.490816,2495.32
+,Recommended Total,801,122,1792,Recommended Total,326.58624,112.490816,2495.32

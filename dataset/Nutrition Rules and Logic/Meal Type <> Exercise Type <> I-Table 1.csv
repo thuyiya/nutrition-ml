@@ -1,0 +1,14 @@
+Table 1
+Meal,,Intensity,CHO,Protein
+Pre-Meal,,Moderate,27.5%,25%
+Pre-Snack,,Moderate,12.50%,0%
+Post-Snack,,Moderate,12.50%,25%
+Pre-Meal,,Intense,30.0%,25%
+Pre-Snack,,Intense,12.5%,0%
+Post-Snack,,Intense,12.5%,0.25
+Pre-Meal,,Moderate,30.0%,25%
+Pre-Snack,,Moderate,12.5%,0%
+Post-Snack,,Moderate,12.5%,0.25
+Pre-Meal,,Intense,32.5%,25%
+Pre-Snack,,Intense,12.5%,0%
+Post-Snack,,Intense,12.5%,0.25

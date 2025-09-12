@@ -1,0 +1,45 @@
+Table 1
+No exercise,"9am Meal, 11am Snack, 1pm Meal, 4pm Snack, 7pm Meal",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+If exercise starts in these ranges:,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Earlier,5:30 AM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Later
+"Restrict Meal to maximum of 9pm, no restriction on Snack, Post-Snack, or Pre-Snack (if a Meal is calculated for after 9pm, set its time to 9pm)",,,,,,,,,,,,,,,,,,,,,,,,,,Remove time restriction on Meal,,,,,
+,,,,,,,,,,,,,,,,,,,,,,Set first Meal time to 9am (this will be the first/earliest recommendation in the list),,,,,,,,,
+"Pre-Snack - 1hr before exercise
+Post-Snack - on completion of exercise
+Meal - 3 hours after completion of exercise
+Meal - 3 hours after last meal
+Meal - 3 hours after last meal",,,,,,,,"Pre-Meal - 2.5hr before exercise
+Pre-Snack - 1hr before exercise
+Post-Snack - on completion of exercise
+Meal - 3 hours after completion of exercise
+Meal - 3 hours after last meal","Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Post-Snack - on completion of exercise
+Meal - 3 hours after completion of exercise
+Meal - 3 hours after last meal",,,,,,,,,"Meal - 6hr before exercise
+Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Post-Snack - on completion of exercise
+Meal - 3hr after completion of exercise",,,,"Meal - 9am
+Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Post-Snack - on completion of exercise
+Meal - 3hr after completion of exercise",,,,"Meal - 9am
+Snack - 12pm
+Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Meal - on completion of exercise",,"Meal - 9am
+Meal - 12pm
+Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Post-Snack - on completion of exercise",,,
+UPDATED ENTRIES,,,,,,,,,"Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Meal - on completion of exercise
+Snack - 3 hours after completion of exercise
+Meal - 3 hours after last meal",,,,,,,,,,,,,"Meal - 9am
+Pre-Meal - 3hr before exercise
+Pre-Snack - 1hr before exercise
+Meal- on completion of exercise
+Snack - 3hr after completion of exercise",,,,,,,,,

@@ -1,0 +1,156 @@
+@startuml Athlete_Dataset_Structure
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam class {
+    BackgroundColor #E8F4FD
+    BorderColor #1E88E5
+    FontSize 11
+}
+
+title "AI-Powered Personalized Nutrition: Athlete Dataset Structure & Categories\nResearch Data Collection Framework"
+
+package "Athlete Profiles Dataset (1,000 Records)" {
+    
+    class AthleteProfile {
+        +athlete_id: String {ATH000001-ATH001000}
+        +name: String {Sport_Level_ID}
+        +age: Integer {18-40 years}
+        +gender: String {M/F}
+        +sport_league: String
+        +sport_type: String
+        +height_cm: Integer {151-220 cm}
+        +weight_kg: Integer {37-157 kg}
+        +body_fat_percentage: Float {1.8-33.7%}
+        +bmr_calories: Float {1180-3086 cal}
+        +activity_level: String
+        +training_experience_years: Integer {1-18 years}
+        +competition_level: String
+        +user_scenario: String
+        +goals: Array[String]
+        +adherence_rate: Float {0.45-0.9}
+        +created_date: Date {2022-01-01}
+    }
+
+    package "Sport Categories" {
+        class SportLeagues {
+            +NFL: 147 athletes (14.7%)
+            +Cricket: 147 athletes (14.7%)
+            +Soccer: 134 athletes (13.4%)
+            +Tennis: 123 athletes (12.3%)
+            +Boxing: 116 athletes (11.6%)
+            +NBA: 114 athletes (11.4%)
+            +Swimming: 110 athletes (11.0%)
+            +Cycling: 109 athletes (10.9%)
+        }
+        
+        class SportTypes {
+            +Endurance: 353 athletes (35.3%)
+            +Team Sport: 261 athletes (26.1%)
+            +Power: 239 athletes (23.9%)
+            +Skill: 147 athletes (14.7%)
+        }
+    }
+
+    package "Demographics" {
+        class GenderDistribution {
+            +Female: 518 athletes (51.8%)
+            +Male: 482 athletes (48.2%)
+        }
+        
+        class PhysicalAttributes {
+            +Age Range: 18-40 years (μ=28.5)
+            +Height Range: 151-220 cm (μ=174.8)
+            +Weight Range: 37-157 kg (μ=77.9)
+            +BMR Range: 1180-3086 cal (μ=1718)
+            +Body Fat: 1.8-33.7% (varied)
+        }
+    }
+
+    package "Performance Categories" {
+        class CompetitionLevels {
+            +Recreational: 198 athletes (19.8%)
+            +Club: 197 athletes (19.7%)
+            +Professional: 182 athletes (18.2%)
+            +Elite: 164 athletes (16.4%)
+            +Regional: 131 athletes (13.1%)
+            +National: 128 athletes (12.8%)
+        }
+        
+        class ActivityLevels {
+            +Very High: 479 athletes (47.9%)
+            +High: 307 athletes (30.7%)
+            +Moderate: 214 athletes (21.4%)
+        }
+        
+        class ExperienceLevels {
+            +Training Years: 1-18 years (μ=8.7)
+            +Novice (1-3 years): ~25%
+            +Intermediate (4-10 years): ~50%
+            +Advanced (11-18 years): ~25%
+        }
+    }
+
+    package "User Behavior & Goals" {
+        class UserScenarios {
+            +Amateur Athlete: 259 (25.9%)
+            +Fitness Enthusiast: 197 (19.7%)
+            +Professional: 182 (18.2%)
+            +Elite Athlete: 164 (16.4%)
+            +Weight Loss: 97 (9.7%)
+            +Weight Gain: 56 (5.6%)
+            +Casual User: 45 (4.5%)
+        }
+        
+        class GoalCategories {
+            +Performance Optimization
+            +Muscle Gain
+            +Endurance Improvement
+            +Strength Improvement
+            +Recovery Enhancement
+            +Weight Loss
+            +Weight Gain
+            +Body Composition
+            +General Health
+        }
+        
+        class AdherenceRates {
+            +Elite Athletes: 0.9 (90%)
+            +Professionals: 0.85 (85%)
+            +Amateur Athletes: 0.75 (75%)
+            +Weight Goals: 0.7 (70%)
+            +Fitness Enthusiasts: 0.65 (65%)
+            +Casual Users: 0.45 (45%)
+        }
+    }
+
+    package "Data Quality Metrics" {
+        class DatasetCharacteristics {
+            +Total Records: 1,000
+            +Balanced Gender: 51.8% F, 48.2% M
+            +Diverse Sports: 8 major categories
+            +Age Distribution: Normal (18-40)
+            +Global Competition Levels: 6 tiers
+            +Realistic BMR Range: 1180-3086 cal
+            +Comprehensive Goals: 9 categories
+            +Behavioral Patterns: 7 scenarios
+        }
+    }
+}
+
+note top of AthleteProfile : "Core entity representing individual athlete profiles\nwith comprehensive demographic, physical,\nperformance, and behavioral attributes"
+
+note bottom of SportTypes : "Sport categorization based on\nprimary energy systems and\ntraining characteristics"
+
+note bottom of UserScenarios : "User behavior patterns derived from\ncompetition level, goals, and\nengagement characteristics"
+
+note right of DatasetCharacteristics : "Research-grade dataset designed for\nAI model training with balanced\ndistributions and realistic ranges"
+
+AthleteProfile ||--|| SportLeagues : "belongs to"
+AthleteProfile ||--|| SportTypes : "categorized by"
+AthleteProfile ||--|| GenderDistribution : "classified by"
+AthleteProfile ||--|| CompetitionLevels : "competes at"
+AthleteProfile ||--|| ActivityLevels : "maintains"
+AthleteProfile ||--|| UserScenarios : "follows"
+AthleteProfile ||--o{ GoalCategories : "pursues"
+
+@enduml 

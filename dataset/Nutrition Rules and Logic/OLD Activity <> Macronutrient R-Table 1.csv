@@ -1,0 +1,21 @@
+Table 1
+Sport Name,Type,Carbs - Lose (g/kg),Carbs - Gain (g/kg),Carbs - Maintain (g/kg),Protein - Lose (g/kg),Protein - Gain (g/kg),Protein - Maintain (g/kg)
+Baseball,Endurance,3,5,4,1.2,1.7,1.45
+Basketball,Endurance,5,7,6,1.4,1.7,1.55
+Bodybuilding ,Power,5,7,6,1.4,1.7,1.55
+Cycling,Endurance,7,20,13.5,1.2,1.7,1.45
+Field Events,Power,5,7,6,1.2,1.7,1.45
+Figure Skating,Endurance,3,6,4.5,1.2,1.7,1.45
+Football,Power,7,12,9.5,1.4,1.7,1.55
+Golf,Endurance,3,5,4,1.2,1.7,1.45
+Gymnastics,Power,3,5,4,1.2,1.7,1.45
+Ice Hockey,Endurance,8,10,9,1.4,1.7,1.55
+Martial Arts,Power,5,7,6,1.2,1.7,1.45
+Rowing,Endurance,5,7,6,1.2,1.7,1.45
+Soccer,Endurance,7,12,9.5,1.4,1.7,1.55
+Swimming,Endurance,7,12,9.5,1.2,1.7,1.45
+Tennis,Endurance,7,12,9.5,1.2,1.7,1.45
+Squash,Endurance,7,12,9.5,1.2,1.7,1.45
+Short distance sprinting (100-400m),Power,5,7,6,1.2,1.7,1.45
+"Long distance running (800-10,000)",Endurance,5,7,6,1.2,1.7,1.45
+Wrestling,Endurance,5,7,6,1.2,1.7,1.45
