@@ -13,6 +13,7 @@ This AI-powered nutrition system leverages machine learning to create smart, ada
 - ✅ **Sport-Specific Modifications**: Tailored nutrition for different sports
 - ✅ **Professional-Grade Accuracy**: 99.75% accuracy for calorie predictions
 - ✅ **Production-Ready API**: RESTful endpoints with comprehensive error handling
+- ✅ **Adaptive Meal Planning**: Real-time adjustments based on meal logging data
 
 ---
 
@@ -139,169 +140,212 @@ Content-Type: application/json
 | `High` | Hard effort, difficult to talk | 70-85% | 7-8 |
 | `Very High` | Maximum effort, cannot talk | 85-100% | 9-10 |
 
----
-
-### **Example Requests**
-
-#### **Example 1: Professional Cricket Player**
-```json
-{
-  "age": 28,
-  "gender": "M",
-  "height_cm": 175,
-  "weight_kg": 70,
-  "body_fat_percentage": 15,
-  "sport_league": "Cricket",
-  "activity_level": "High",
-  "goal": "performance_optimization",
-  "time_range_days": 30,
-  "exercise_schedule": [
-    {
-      "type": "Skills Training",
-      "duration_minutes": 90,
-      "intensity": "High",
-      "time": "9:00 AM"
-    },
-    {
-      "type": "Fitness Training",
-      "duration_minutes": 60,
-      "intensity": "Moderate",
-      "time": "3:00 PM"
-    }
-  ]
-}
+#### **Generate Adaptive Meal Plan**
+```http
+POST /api/generate-adaptive-meal-plan
+Content-Type: application/json
 ```
 
-#### **Example 2: Recreational Basketball Player**
-```json
-{
-  "age": 25,
-  "gender": "F",
-  "height_cm": 165,
-  "weight_kg": 60,
-  "body_fat_percentage": 20,
-  "sport_league": "Basketball",
-  "activity_level": "Moderate",
-  "goal": "weight_loss",
-  "time_range_days": 14,
-  "exercise_schedule": [
-    {
-      "type": "Skills Training",
-      "duration_minutes": 60,
-      "intensity": "Moderate",
-      "time": "6:00 PM"
-    }
-  ]
-}
-```
+**Request Body Parameters:**
 
-#### **Example 3: Endurance Athlete**
-```json
-{
-  "age": 32,
-  "gender": "M",
-  "height_cm": 180,
-  "weight_kg": 75,
-  "body_fat_percentage": 12,
-  "sport_league": "Swimming- Distance",
-  "activity_level": "Very High",
-  "goal": "endurance_improvement",
-  "time_range_days": 21,
-  "exercise_schedule": [
-    {
-      "type": "Endurance Training",
-      "duration_minutes": 120,
-      "intensity": "High",
-      "time": "6:00 AM"
-    },
-    {
-      "type": "Recovery Session",
-      "duration_minutes": 45,
-      "intensity": "Low",
-      "time": "7:00 PM"
-    }
-  ]
-}
-```
+| Parameter | Type | Required | Description | Example Values |
+|-----------|------|----------|-------------|----------------|
+| `user_id` | string | ✅ | Unique user identifier | "athlete_123" |
+| `age` | integer | ✅ | Athlete's age | 18-65 |
+| `gender` | string | ✅ | Gender | "M", "F" |
+| `height_cm` | float | ✅ | Height in centimeters | 150-220 |
+| `weight_kg` | float | ✅ | Weight in kilograms | 40-150 |
+| `body_fat_percentage` | float | ✅ | Body fat percentage | 5-35 |
+| `sport_league` | string | ❌ | Primary sport | See Sport Options above |
+| `activity_level` | string | ❌ | Activity level | See Activity Levels above |
+| `goal` | string | ❌ | Fitness goal | See Goals above |
+| `time_range_days` | integer | ❌ | Plan duration | 7-365 |
+| `exercise_schedule` | array | ❌ | Exercise sessions | See Exercise Schedule above |
+| `meal_logging_data` | array | ❌ | Logged meal data | See Meal Logging Format below |
+| `current_time` | string | ❌ | Current time (ISO format) | "2025-09-13T14:30:00.000Z" |
 
-#### **Example 4: Strength Athlete**
+**Meal Logging Format:**
 ```json
-{
-  "age": 24,
-  "gender": "F",
-  "height_cm": 170,
-  "weight_kg": 65,
-  "body_fat_percentage": 18,
-  "sport_league": "General Fitness",
-  "activity_level": "High",
-  "goal": "muscle_building",
-  "time_range_days": 30,
-  "exercise_schedule": [
-    {
-      "type": "Strength Training",
-      "duration_minutes": 90,
-      "intensity": "High",
-      "time": "7:00 AM"
-    },
-    {
-      "type": "Cardio",
-      "duration_minutes": 30,
-      "intensity": "Moderate",
-      "time": "6:00 PM"
-    }
-  ]
-}
-```
-
-#### **Example 5: Rest Day (No Exercise)**
-```json
-{
-  "age": 30,
-  "gender": "M",
-  "height_cm": 175,
-  "weight_kg": 70,
-  "body_fat_percentage": 15,
-  "sport_league": "Tennis",
-  "activity_level": "Moderate",
-  "goal": "general_wellness",
-  "time_range_days": 7,
-  "exercise_schedule": []
-}
+"meal_logging_data": [
+  {
+    "meal_type": "Breakfast",
+    "consumption_time": "9:30 AM",
+    "calories": 450,
+    "carbs_g": 55,
+    "protein_g": 25,
+    "fat_g": 18,
+    "consumed": "70%"
+  }
+]
 ```
 
 **Response Format:**
 ```json
 {
   "status": "success",
-  "meal_plan": {
-    "total_nutrition": {
-      "total_daily_calories": 3159.9,
-      "total_daily_carbs_g": 259.5,
-      "total_daily_protein_g": 112.8,
-      "total_daily_fat_g": 220.6
+  "adaptive_meal_plan": {
+    "adaptation_status": "adapted",
+    "adaptation_details": {
+      "missed_meals": 1,
+      "partial_meals": 1,
+      "deficit": {
+        "calories": 280.7,
+        "carbs_g": 24.1,
+        "protein_g": 10.8,
+        "fat_g": 17.7
+      },
+      "adaptation_reason": "Missed meals: Pre-Exercise Snack; Partially consumed: Post-Exercise Meal (70%)",
+      "adaptation_time": "2025-09-13T14:30:00"
     },
-    "exercise_count": 2,
     "meal_plan": [
       {
         "meal_type": "Pre-Exercise Snack",
-        "time": "8:30 AM",
-        "calories": 316.0,
-        "carbs_g": 26.0,
-        "protein_g": 11.3,
-        "fat_g": 22.1,
-        "percentage": 10.0
+        "time": "8:00 AM",
+        "calories": 280.7,
+        "carbs_g": 24.1,
+        "protein_g": 10.8,
+        "fat_g": 17.7,
+        "status": "missed"
       },
       {
         "meal_type": "Post-Exercise Meal",
         "time": "11:00 AM",
-        "calories": 948.0,
-        "carbs_g": 77.9,
+        "calories": 842.2,
+        "carbs_g": 72.3,
+        "protein_g": 32.3,
+        "fat_g": 53.0
+      },
+      {
+        "meal_type": "Lunch",
+        "time": "3:00 PM",
+        "calories": 884.3,
+        "carbs_g": 75.9,
         "protein_g": 33.9,
-        "fat_g": 66.2,
-        "percentage": 30.0
+        "fat_g": 55.6,
+        "status": "adapted",
+        "adaptation_note": "Increased by 5.0% to compensate for missed nutrition"
       }
     ]
   }
+}
+```
+
+#### **Log a Meal**
+```http
+POST /api/log-meal
+Content-Type: application/json
+```
+
+**Request Body:**
+```json
+{
+  "user_id": "athlete_123",
+  "meal_type": "Breakfast",
+  "consumption_time": "9:30 AM",
+  "calories": 450,
+  "carbs_g": 55,
+  "protein_g": 25,
+  "fat_g": 18,
+  "consumed": "90%"
+}
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "logged_meal": {
+    "meal_type": "Breakfast",
+    "consumption_time": "9:30 AM",
+    "calories": 450,
+    "carbs_g": 55,
+    "protein_g": 25,
+    "fat_g": 18,
+    "consumed": "90%",
+    "logged_at": "2025-09-13T09:35:00.000Z"
+  },
+  "nutrition_status": {
+    "total": {
+      "total_daily_calories": 2500,
+      "total_daily_carbs_g": 300,
+      "total_daily_protein_g": 150,
+      "total_daily_fat_g": 80
+    },
+    "consumed": {
+      "calories": 450,
+      "carbs_g": 55,
+      "protein_g": 25,
+      "fat_g": 18
+    },
+    "remaining": {
+      "calories": 2050,
+      "carbs_g": 245,
+      "protein_g": 125,
+      "fat_g": 62
+    },
+    "progress": {
+      "calories": 18,
+      "carbs_g": 18.3,
+      "protein_g": 16.7,
+      "fat_g": 22.5
+    }
+  },
+  "logged_meals_count": 1,
+  "message": "Meal logged successfully"
+}
+```
+
+#### **Get Nutrition Status**
+```http
+GET /api/nutrition-status/athlete_123
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "nutrition_status": {
+    "total": {
+      "total_daily_calories": 2500,
+      "total_daily_carbs_g": 300,
+      "total_daily_protein_g": 150,
+      "total_daily_fat_g": 80
+    },
+    "consumed": {
+      "calories": 450,
+      "carbs_g": 55,
+      "protein_g": 25,
+      "fat_g": 18
+    },
+    "remaining": {
+      "calories": 2050,
+      "carbs_g": 245,
+      "protein_g": 125,
+      "fat_g": 62
+    },
+    "progress": {
+      "calories": 18,
+      "carbs_g": 18.3,
+      "protein_g": 16.7,
+      "fat_g": 22.5
+    },
+    "last_updated": "2025-09-13T09:35:00.000Z",
+    "logged_meals_count": 1
+  },
+  "user_id": "athlete_123"
+}
+```
+
+#### **Reset User Session**
+```http
+POST /api/reset-user/athlete_123
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "message": "User session for athlete_123 reset successfully"
 }
 ```
 
@@ -362,6 +406,257 @@ GET /api/example-request
 #### **Health Check**
 ```http
 GET /health
+```
+
+---
+
+## 🔄 **Adaptive Meal Planning**
+
+The system features advanced adaptive meal planning capabilities that adjust meal plans based on actual consumption patterns. This ensures that daily nutrition targets are still met even when meals are missed or partially consumed.
+
+### **Key Adaptive Features**
+
+- **Missed Meal Detection**: Automatically identifies meals that have passed but weren't logged
+- **Partial Meal Tracking**: Handles scenarios where users consume only a portion of a meal
+- **Intelligent Redistribution**: Spreads missed nutrition across remaining meals
+- **Time-based Adjustments**: Adapts meal plans based on the current time of day
+- **Detailed Adaptation Notes**: Provides clear explanations for why meals were adjusted
+
+### **Example Adaptive Scenarios**
+
+#### **Scenario 1: Missed Pre-Exercise Snack**
+When a user misses their pre-exercise snack (e.g., 280 calories), the system will:
+1. Detect the missed meal based on current time
+2. Calculate the nutrition deficit
+3. Redistribute the deficit across remaining meals
+4. Apply safety caps to prevent excessive increases
+5. Provide detailed adaptation notes for transparency
+
+#### **Scenario 2: Partially Consumed Meal**
+When a user consumes only 70% of their post-exercise meal:
+1. Calculate the nutrition deficit from the partially consumed meal
+2. Redistribute the missing nutrition across remaining meals
+3. Apply weighted distribution (main meals get more than snacks)
+4. Ensure daily nutrition targets are still met
+
+### **Example: Adaptive Meal Plan Request**
+
+```bash
+curl -X POST http://localhost:5001/api/generate-adaptive-meal-plan \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": "athlete_123",
+    "age": 28,
+    "gender": "W",
+    "height_cm": 175,
+    "weight_kg": 65,
+    "body_fat_percentage": 50,
+    "sport_league": "Cricket",
+    "activity_level": "High",
+    "goal": "performance_optimization",
+    "time_range_days": 30,
+    "exercise_schedule": [
+      {
+        "type": "Skills Training",
+        "duration_minutes": 300,
+        "intensity": "High",
+        "time": "9:00 AM"
+      }
+    ],
+    "meal_logging_data": [
+      {
+        "meal_type": "Post-Exercise Meal",
+        "consumption_time": "11:30 AM",
+        "calories": 590,
+        "carbs_g": 51,
+        "protein_g": 23,
+        "fat_g": 37,
+        "consumed": "70%"
+      }
+    ],
+    "current_time": "2025-09-13T14:30:00.000Z"
+  }'
+```
+
+### **Testing Adaptive Meal Planning**
+
+To test the adaptive meal planning functionality:
+
+```bash
+python test_adaptive_meal_plan.py
+```
+
+This test script will:
+1. Generate a basic meal plan
+2. Log a partially consumed meal
+3. Check the nutrition status
+4. Generate an adaptive meal plan
+5. Reset the user session
+
+---
+
+## 📋 **Example Requests**
+
+### **Example 1: Professional Cricket Player**
+```json
+{
+  "age": 28,
+  "gender": "M",
+  "height_cm": 175,
+  "weight_kg": 70,
+  "body_fat_percentage": 15,
+  "sport_league": "Cricket",
+  "activity_level": "High",
+  "goal": "performance_optimization",
+  "time_range_days": 30,
+  "exercise_schedule": [
+    {
+      "type": "Skills Training",
+      "duration_minutes": 90,
+      "intensity": "High",
+      "time": "9:00 AM"
+    },
+    {
+      "type": "Fitness Training",
+      "duration_minutes": 60,
+      "intensity": "Moderate",
+      "time": "3:00 PM"
+    }
+  ]
+}
+```
+
+### **Example 2: Recreational Basketball Player**
+```json
+{
+  "age": 25,
+  "gender": "F",
+  "height_cm": 165,
+  "weight_kg": 60,
+  "body_fat_percentage": 20,
+  "sport_league": "Basketball",
+  "activity_level": "Moderate",
+  "goal": "weight_loss",
+  "time_range_days": 14,
+  "exercise_schedule": [
+    {
+      "type": "Skills Training",
+      "duration_minutes": 60,
+      "intensity": "Moderate",
+      "time": "6:00 PM"
+    }
+  ]
+}
+```
+
+### **Example 3: Endurance Athlete**
+```json
+{
+  "age": 32,
+  "gender": "M",
+  "height_cm": 180,
+  "weight_kg": 75,
+  "body_fat_percentage": 12,
+  "sport_league": "Swimming- Distance",
+  "activity_level": "Very High",
+  "goal": "endurance_improvement",
+  "time_range_days": 21,
+  "exercise_schedule": [
+    {
+      "type": "Endurance Training",
+      "duration_minutes": 120,
+      "intensity": "High",
+      "time": "6:00 AM"
+    },
+    {
+      "type": "Recovery Session",
+      "duration_minutes": 45,
+      "intensity": "Low",
+      "time": "7:00 PM"
+    }
+  ]
+}
+```
+
+### **Example 4: Strength Athlete**
+```json
+{
+  "age": 24,
+  "gender": "F",
+  "height_cm": 170,
+  "weight_kg": 65,
+  "body_fat_percentage": 18,
+  "sport_league": "General Fitness",
+  "activity_level": "High",
+  "goal": "muscle_building",
+  "time_range_days": 30,
+  "exercise_schedule": [
+    {
+      "type": "Strength Training",
+      "duration_minutes": 90,
+      "intensity": "High",
+      "time": "7:00 AM"
+    },
+    {
+      "type": "Cardio",
+      "duration_minutes": 30,
+      "intensity": "Moderate",
+      "time": "6:00 PM"
+    }
+  ]
+}
+```
+
+### **Example 5: Rest Day (No Exercise)**
+```json
+{
+  "age": 30,
+  "gender": "M",
+  "height_cm": 175,
+  "weight_kg": 70,
+  "body_fat_percentage": 15,
+  "sport_league": "Tennis",
+  "activity_level": "Moderate",
+  "goal": "general_wellness",
+  "time_range_days": 7,
+  "exercise_schedule": []
+}
+```
+
+### **Example 6: Adaptive Meal Plan with Meal Logging**
+```json
+{
+  "user_id": "athlete_123",
+  "age": 28,
+  "gender": "W",
+  "height_cm": 175,
+  "weight_kg": 65,
+  "body_fat_percentage": 50,
+  "sport_league": "Cricket",
+  "activity_level": "High",
+  "goal": "performance_optimization",
+  "time_range_days": 30,
+  "exercise_schedule": [
+    {
+      "type": "Skills Training",
+      "duration_minutes": 300,
+      "intensity": "High",
+      "time": "9:00 AM"
+    }
+  ],
+  "meal_logging_data": [
+    {
+      "meal_type": "Post-Exercise Meal",
+      "consumption_time": "11:30 AM",
+      "calories": 590,
+      "carbs_g": 51,
+      "protein_g": 23,
+      "fat_g": 37,
+      "consumed": "70%"
+    }
+  ],
+  "current_time": "2025-09-13T14:30:00.000Z"
+}
 ```
 
 ---
@@ -447,7 +742,7 @@ name,type,carbWeightRatio,proteinWeightRatio,METs,carbsGain,carbsLose,carbsMaint
 
 ## 📊 **System Architecture**
 
-### **Three-Layer Architecture**
+### **Four-Layer Architecture**
 
 1. **Data Processing Layer**
    - Feature engineering (22 comprehensive features)
@@ -464,6 +759,12 @@ name,type,carbWeightRatio,proteinWeightRatio,METs,carbsGain,carbsLose,carbsMaint
    - Context-aware recommendations
    - Confidence scoring and uncertainty quantification
 
+4. **Meal Logging System**
+   - User session management
+   - Meal consumption tracking
+   - Adaptive redistribution logic
+   - Time-based meal adjustments
+
 ### **Technical Stack**
 - **Backend**: Python Flask API
 - **ML Framework**: Scikit-learn, XGBoost, LightGBM
@@ -478,6 +779,7 @@ name,type,carbWeightRatio,proteinWeightRatio,METs,carbsGain,carbsLose,carbsMaint
 ### **Run Comprehensive Tests**
 ```bash
 python test_api.py
+python test_adaptive_meal_plan.py
 ```
 
 ### **Manual Testing Examples**
@@ -507,6 +809,44 @@ curl -X POST http://localhost:5001/api/generate-meal-plan \
     "weight_kg": 70,
     "body_fat_percentage": 15,
     "goal": "muscle_building"
+  }'
+```
+
+#### **Test Adaptive Meal Plan**
+```bash
+curl -X POST http://localhost:5001/api/generate-adaptive-meal-plan \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": "athlete_123",
+    "age": 28,
+    "gender": "W",
+    "height_cm": 175,
+    "weight_kg": 65,
+    "body_fat_percentage": 50,
+    "sport_league": "Cricket",
+    "activity_level": "High",
+    "goal": "performance_optimization",
+    "time_range_days": 30,
+    "exercise_schedule": [
+      {
+        "type": "Skills Training",
+        "duration_minutes": 300,
+        "intensity": "High",
+        "time": "9:00 AM"
+      }
+    ],
+    "meal_logging_data": [
+      {
+        "meal_type": "Post-Exercise Meal",
+        "consumption_time": "11:30 AM",
+        "calories": 590,
+        "carbs_g": 51,
+        "protein_g": 23,
+        "fat_g": 37,
+        "consumed": "70%"
+      }
+    ],
+    "current_time": "2025-09-13T14:30:00.000Z"
   }'
 ```
 

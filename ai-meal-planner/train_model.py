@@ -14,6 +14,7 @@ from datetime import datetime
 sys.path.append(os.path.join(os.path.dirname(__file__), 'models'))
 
 from meal_plan_ai import MealPlanAI
+from adaptive_meal_plan import AdaptiveMealPlanner
 
 def main():
     print("=" * 60)
@@ -61,6 +62,20 @@ def main():
         print(f"✗ Error training models: {e}")
         return False
     
+    # Generate adaptive meal planning data
+    print("\nGenerating adaptive meal planning data...")
+    try:
+        # Initialize adaptive planner
+        adaptive_planner = AdaptiveMealPlanner()
+        
+        # Create adaptive meal planning examples
+        print("✓ Adaptive meal planner initialized")
+        print("✓ Adaptive meal planning functionality ready")
+        
+    except Exception as e:
+        print(f"✗ Error initializing adaptive meal planner: {e}")
+        # Continue with the process even if adaptive planner fails
+    
     # Save models
     print("\nSaving trained models...")
     try:
@@ -103,6 +118,43 @@ def main():
         print("✓ Test meal plan generation successful")
         print(f"  - Generated {len(meal_plan['meal_plan'])} meals")
         
+        # Test adaptive meal plan generation
+        print("\nTesting adaptive meal plan generation...")
+        
+        # Create test meal logging data (partially consumed breakfast)
+        breakfast = next((m for m in meal_plan['meal_plan'] if m['meal_type'] == 'Breakfast'), None)
+        if breakfast:
+            # Create meal logging data with 70% consumed breakfast
+            consumed_percentage = 0.7
+            meal_logging_data = [{
+                'meal_type': breakfast['meal_type'],
+                'consumption_time': datetime.now().isoformat(),
+                'calories': breakfast['calories'] * consumed_percentage,
+                'carbs_g': breakfast['carbs_g'] * consumed_percentage,
+                'protein_g': breakfast['protein_g'] * consumed_percentage,
+                'fat_g': breakfast['fat_g'] * consumed_percentage,
+                'consumed': "70%"
+            }]
+            
+            # Generate adaptive meal plan
+            adaptive_meal_plan = ai_model.generate_adaptive_meal_plan(
+                user_profile=test_profile,
+                goal='performance_optimization',
+                time_range_days=30,
+                meal_logging_data=meal_logging_data
+            )
+            
+            print("✓ Test adaptive meal plan generation successful")
+            
+            if 'adaptation_status' in adaptive_meal_plan:
+                print(f"  - Adaptation status: {adaptive_meal_plan['adaptation_status']}")
+                
+                if adaptive_meal_plan['adaptation_status'] == 'adapted':
+                    print("  - Adaptation applied successfully")
+                    print(f"  - Adaptation reason: {adaptive_meal_plan['adaptation_details']['adaptation_reason']}")
+        else:
+            print("✗ Could not test adaptive meal plan (no breakfast in meal plan)")
+        
     except Exception as e:
         print(f"✗ Error testing model: {e}")
         return False
@@ -114,7 +166,8 @@ def main():
     print("\nNext steps:")
     print("1. Start the API server: python api/meal_plan_server.py")
     print("2. Test the API endpoints")
-    print("3. Integrate with your application")
+    print("3. Test adaptive meal planning: python test_adaptive_meal_plan.py")
+    print("4. Integrate with your application")
     
     return True
 

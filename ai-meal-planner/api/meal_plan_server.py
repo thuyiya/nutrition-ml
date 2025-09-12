@@ -30,6 +30,9 @@ class NumpyEncoder(json.JSONEncoder):
             return obj.tolist()
         return super(NumpyEncoder, self).default(obj)
 
+# Set custom JSON encoder
+app.json_encoder = NumpyEncoder
+
 # Load trained models with corrected logic
 def load_models():
     model_path = './models/trained_models'
@@ -162,6 +165,186 @@ def generate_meal_plan():
         
     except Exception as e:
         print(f"Error generating meal plan: {e}")
+        print(traceback.format_exc())
+        return jsonify({
+            'error': str(e),
+            'status': 'error'
+        }), 500
+
+@app.route('/api/generate-adaptive-meal-plan', methods=['POST'])
+def generate_adaptive_meal_plan():
+    """Generate adaptive meal plan based on logged meals"""
+    try:
+        data = request.get_json()
+        
+        # Validate required fields
+        required_fields = ['age', 'gender', 'height_cm', 'weight_kg', 'body_fat_percentage', 'user_id']
+        for field in required_fields:
+            if field not in data:
+                return jsonify({
+                    'error': f'Missing required field: {field}',
+                    'status': 'error'
+                }), 400
+        
+        # Extract user profile
+        user_profile = {
+            'user_id': data['user_id'],
+            'age': int(data['age']),
+            'gender': data['gender'],
+            'height_cm': float(data['height_cm']),
+            'weight_kg': float(data['weight_kg']),
+            'body_fat_percentage': float(data['body_fat_percentage']),
+            'sport_league': data.get('sport_league', 'General Fitness'),
+            'activity_level': data.get('activity_level', 'Moderate'),
+            'training_experience_years': data.get('training_experience_years', 5),
+            'adherence_rate': data.get('adherence_rate', 0.8),
+            'competition_level': data.get('competition_level', 'Recreational'),
+            'user_scenario': data.get('user_scenario', 'fitness_enthusiast')
+        }
+        
+        # Extract goal and time range
+        goal = data.get('goal', 'general_wellness')
+        time_range_days = int(data.get('time_range_days', 30))
+        
+        # Extract exercise schedule if provided
+        exercise_schedule = data.get('exercise_schedule', [])
+        
+        # Extract meal logging data if provided
+        meal_logging_data = data.get('meal_logging_data', [])
+        
+        # Extract current time if provided
+        current_time = data.get('current_time')
+        if current_time:
+            try:
+                # Convert ISO format to datetime, handling timezone info
+                current_time = datetime.fromisoformat(current_time.replace('Z', '+00:00'))
+                # Convert to naive datetime to avoid comparison issues
+                current_time = current_time.replace(tzinfo=None)
+            except ValueError:
+                current_time = datetime.now()
+        else:
+            current_time = datetime.now()
+        
+        # Generate adaptive meal plan
+        adaptive_meal_plan = ai_model.generate_adaptive_meal_plan(
+            user_profile=user_profile,
+            goal=goal,
+            time_range_days=time_range_days,
+            exercise_schedule=exercise_schedule,
+            meal_logging_data=meal_logging_data,
+            current_time=current_time
+        )
+        
+        # Convert numpy types to Python types
+        adaptive_meal_plan_converted = convert_numpy_types(adaptive_meal_plan)
+        
+        return jsonify({
+            'status': 'success',
+            'adaptive_meal_plan': adaptive_meal_plan_converted,
+            'current_time': current_time.isoformat()
+        })
+        
+    except Exception as e:
+        print(f"Error generating adaptive meal plan: {e}")
+        print(traceback.format_exc())
+        return jsonify({
+            'error': str(e),
+            'status': 'error'
+        }), 500
+
+@app.route('/api/log-meal', methods=['POST'])
+def log_meal():
+    """Log a meal consumed by the user"""
+    try:
+        data = request.get_json()
+        
+        # Validate required fields
+        required_fields = ['user_id', 'meal_type', 'calories', 'carbs_g', 'protein_g', 'fat_g']
+        for field in required_fields:
+            if field not in data:
+                return jsonify({
+                    'error': f'Missing required field: {field}',
+                    'status': 'error'
+                }), 400
+        
+        # Extract meal data
+        meal_data = {
+            'meal_type': data['meal_type'],
+            'consumption_time': data.get('consumption_time', datetime.now().isoformat()),
+            'calories': float(data['calories']),
+            'carbs_g': float(data['carbs_g']),
+            'protein_g': float(data['protein_g']),
+            'fat_g': float(data['fat_g']),
+            'consumed': data.get('consumed', '100%')
+        }
+        
+        # Log the meal
+        logged_meals = ai_model.log_meal(data['user_id'], meal_data)
+        
+        # Get updated nutrition status
+        nutrition_status = ai_model.get_user_nutrition_status(data['user_id'])
+        
+        return jsonify({
+            'status': 'success',
+            'logged_meal': meal_data,
+            'nutrition_status': nutrition_status,
+            'logged_meals_count': len(logged_meals),
+            'message': 'Meal logged successfully'
+        })
+        
+    except Exception as e:
+        print(f"Error logging meal: {e}")
+        print(traceback.format_exc())
+        return jsonify({
+            'error': str(e),
+            'status': 'error'
+        }), 500
+
+@app.route('/api/nutrition-status/<user_id>', methods=['GET'])
+def get_nutrition_status(user_id):
+    """Get nutrition status for a user"""
+    try:
+        nutrition_status = ai_model.get_user_nutrition_status(user_id)
+        
+        if not nutrition_status:
+            return jsonify({
+                'status': 'error',
+                'message': 'No meal plan found for user'
+            }), 404
+        
+        return jsonify({
+            'status': 'success',
+            'nutrition_status': nutrition_status,
+            'user_id': user_id
+        })
+        
+    except Exception as e:
+        print(f"Error getting nutrition status: {e}")
+        print(traceback.format_exc())
+        return jsonify({
+            'error': str(e),
+            'status': 'error'
+        }), 500
+
+@app.route('/api/reset-user/<user_id>', methods=['POST'])
+def reset_user(user_id):
+    """Reset user session data"""
+    try:
+        success = ai_model.reset_user_session(user_id)
+        
+        if success:
+            return jsonify({
+                'status': 'success',
+                'message': f'User session for {user_id} reset successfully'
+            })
+        else:
+            return jsonify({
+                'status': 'error',
+                'message': f'No session found for user {user_id}'
+            }), 404
+        
+    except Exception as e:
+        print(f"Error resetting user session: {e}")
         print(traceback.format_exc())
         return jsonify({
             'error': str(e),
@@ -329,6 +512,7 @@ def get_example_request():
         'height_cm': 175,
         'weight_kg': 70,
         'body_fat_percentage': 15,
+        'user_id': 'athlete_123',  # New: Required for adaptive meal planning
         'sport_league': 'Cricket',
         'activity_level': 'High',
         'training_experience_years': 8,
@@ -350,6 +534,17 @@ def get_example_request():
                 'intensity': 'Moderate',
                 'time': '3:00 PM'
             }
+        ],
+        'meal_logging_data': [  # New: Optional meal logging data
+            {
+                'meal_type': 'Breakfast',
+                'consumption_time': '9:30 AM',
+                'calories': 450,
+                'carbs_g': 55,
+                'protein_g': 25,
+                'fat_g': 18,
+                'consumed': '90%'  # Percentage consumed (optional)
+            }
         ]
     }
     
@@ -364,6 +559,10 @@ if __name__ == '__main__':
     print("Available endpoints:")
     print("  GET  /health - Health check")
     print("  POST /api/generate-meal-plan - Generate meal plan")
+    print("  POST /api/generate-adaptive-meal-plan - Generate adaptive meal plan")
+    print("  POST /api/log-meal - Log meal consumption")
+    print("  GET  /api/nutrition-status/<user_id> - Get user nutrition status")
+    print("  POST /api/reset-user/<user_id> - Reset user session")
     print("  POST /api/predict-nutrition - Predict nutrition needs")
     print("  GET  /api/goals - Get available goals")
     print("  GET  /api/sports - Get available sports")

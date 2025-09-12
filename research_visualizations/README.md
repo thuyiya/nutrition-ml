@@ -33,6 +33,7 @@ This directory contains comprehensive visualizations that support the AI-powered
 **Purpose**: Complete technical system architecture
 **Key Components**: Data processing, ML models, adaptive engine
 **Research Section**: System Design & Implementation
+**Note**: Needs update to include the new Meal Logging System layer
 
 ### **6. Research Validation Summary**
 **File**: `research_validation_summary.png`
@@ -58,6 +59,13 @@ This directory contains comprehensive visualizations that support the AI-powered
 **Key Metrics**: 4 clusters, sport-specific patterns
 **Research Section**: Personalization & Clustering
 
+### **10. Adaptive Meal Planning System** [NEW]
+**File**: `adaptive_meal_planning_system.png` [To be created]
+**Purpose**: Illustrate the adaptive meal planning functionality
+**Key Components**: Missed meal detection, nutrition redistribution, time-based adaptation
+**Key Metrics**: Adaptation accuracy, redistribution effectiveness
+**Research Section**: Advanced Features & Real-time Adaptation
+
 ## 🎯 **Usage Guidelines**
 
 ### **For Dissertation Report**
@@ -65,15 +73,17 @@ This directory contains comprehensive visualizations that support the AI-powered
 - **Chapter 4 (Results)**: Use visualizations 2, 6, 9
 - **System Architecture**: Use visualization 5
 - **Algorithm Justification**: Use visualization 7
+- **Adaptive Features**: Use visualization 10
 
 ### **For Academic Presentations**
 - **Key Findings**: Visualizations 2, 6
 - **System Overview**: Visualization 5
 - **Methodology**: Visualizations 1, 3
+- **Advanced Features**: Visualization 10
 
 ### **For Stakeholder Communication**
 - **Performance Metrics**: Visualization 6
-- **System Capabilities**: Visualization 5
+- **System Capabilities**: Visualizations 5, 10
 - **Data Quality**: Visualizations 1, 8
 
 ## 📊 **Technical Specifications**
@@ -99,6 +109,7 @@ These visualizations collectively demonstrate:
 3. **Thorough Validation**: Multiple cross-validation approaches
 4. **Professional-Grade Performance**: Exceeding all accuracy targets
 5. **Practical Applicability**: Real-world deployment capabilities
+6. **Adaptive Intelligence**: Real-time adaptation to user behavior
 
 ## 📈 **Performance Metrics Summary**
 
@@ -113,6 +124,7 @@ These visualizations collectively demonstrate:
 | Neural Network Comparison | 99.75% vs 65% | Algorithm justification |
 | Dataset Overview | High data quality | Research foundation |
 | Athlete Clustering | 4 performance groups | Personalization capability |
+| Adaptive Meal Planning | Real-time adaptation | Intelligent responsiveness |
 
 ## 🎓 **Academic Citation**
 
@@ -129,5 +141,5 @@ For questions about these visualizations or requests for additional analysis, pl
 ---
 
 **Last Updated**: September 2025
-**Version**: 1.0
+**Version**: 1.1
 **Status**: ✅ Research Complete

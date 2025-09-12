@@ -12,6 +12,9 @@ from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings('ignore')
 
+# Import the AdaptiveMealPlanner
+from models.adaptive_meal_plan import AdaptiveMealPlanner
+
 class MealPlanAI:
     def __init__(self):
         self.models = {}
@@ -21,6 +24,8 @@ class MealPlanAI:
         self.target_columns = ['total_daily_calories', 'total_daily_carbs_g', 'total_daily_protein_g', 'total_daily_fat_g']
         self.meal_distribution_model = None
         self.goal_models = {}
+        self.adaptive_planner = AdaptiveMealPlanner()  # Initialize the adaptive planner
+        self.user_sessions = {}  # Store user sessions for tracking meal logging
         
     def load_data(self, data_path):
         """Load and prepare training data"""
@@ -225,9 +230,13 @@ class MealPlanAI:
             self.goal_models[goal] = goal_models
             print(f"Trained models for goal: {goal}")
     
-    def _train_meal_distribution_model(self, meal_plans_df):
+    def _train_meal_distribution_model(self, training_data):
         """Train model for meal distribution patterns"""
         print("Training meal distribution model...")
+        
+        # Get the original meal plans dataframe with meal_type information
+        data_path = '../dataset/data-collection'
+        meal_plans_df = pd.read_csv(f'{data_path}/assigned_meal_plans.csv')
         
         # Analyze meal distribution patterns
         meal_distribution = meal_plans_df.groupby(['exercise_count', 'meal_type']).agg({
@@ -595,6 +604,150 @@ class MealPlanAI:
         except Exception as e:
             print(f"Error loading models: {e}")
             return False
+
+    def generate_adaptive_meal_plan(self, user_profile, goal='general_wellness', time_range_days=30, 
+                                   exercise_schedule=None, meal_logging_data=None, current_time=None):
+        """
+        Generate an adaptive meal plan that adjusts based on logged meals and missed meals.
+        
+        Args:
+            user_profile: User profile data
+            goal: Nutrition goal (e.g., 'weight_loss', 'muscle_building')
+            time_range_days: Plan duration in days
+            exercise_schedule: List of exercise sessions
+            meal_logging_data: List of logged meals with consumption details
+            current_time: Current time (defaults to now if not provided)
+            
+        Returns:
+            Adaptive meal plan with redistributed nutrition
+        """
+        # Set default current time if not provided
+        if current_time is None:
+            current_time = datetime.now()
+            
+        # Generate base meal plan
+        base_meal_plan = self.generate_meal_plan(
+            user_profile=user_profile,
+            goal=goal,
+            time_range_days=time_range_days,
+            exercise_schedule=exercise_schedule
+        )
+        
+        # If no meal logging data, return the base plan
+        if not meal_logging_data:
+            return base_meal_plan
+        
+        # Use the adaptive planner to adjust the meal plan
+        adaptive_meal_plan = self.adaptive_planner.adapt_meal_plan(
+            original_meal_plan=base_meal_plan,
+            meal_logging_data=meal_logging_data,
+            current_time=current_time
+        )
+        
+        # Store in user session for future reference
+        user_id = user_profile.get('user_id', 'default_user')
+        if user_id not in self.user_sessions:
+            self.user_sessions[user_id] = {}
+            
+        self.user_sessions[user_id]['last_meal_plan'] = adaptive_meal_plan
+        self.user_sessions[user_id]['last_updated'] = current_time
+        self.user_sessions[user_id]['meal_logging_data'] = meal_logging_data
+        
+        return adaptive_meal_plan
+    
+    def log_meal(self, user_id, meal_data):
+        """
+        Log a meal consumed by the user
+        
+        Args:
+            user_id: User identifier
+            meal_data: Meal consumption data
+            
+        Returns:
+            Updated meal logging data
+        """
+        # Initialize user session if it doesn't exist
+        if user_id not in self.user_sessions:
+            self.user_sessions[user_id] = {
+                'meal_logging_data': [],
+                'last_meal_plan': None,
+                'last_updated': datetime.now()
+            }
+            
+        # Add logged meal
+        meal_data['logged_at'] = datetime.now().isoformat()
+        self.user_sessions[user_id]['meal_logging_data'].append(meal_data)
+        self.user_sessions[user_id]['last_updated'] = datetime.now()
+        
+        return self.user_sessions[user_id]['meal_logging_data']
+    
+    def get_user_nutrition_status(self, user_id):
+        """
+        Get the current nutrition status for a user
+        
+        Args:
+            user_id: User identifier
+            
+        Returns:
+            Nutrition status including consumed and remaining nutrition
+        """
+        if user_id not in self.user_sessions or not self.user_sessions[user_id].get('last_meal_plan'):
+            return None
+            
+        session = self.user_sessions[user_id]
+        meal_plan = session['last_meal_plan']
+        logged_meals = session.get('meal_logging_data', [])
+        
+        # Calculate consumed nutrition
+        consumed = {
+            'calories': sum(meal.get('calories', 0) for meal in logged_meals),
+            'carbs_g': sum(meal.get('carbs_g', 0) for meal in logged_meals),
+            'protein_g': sum(meal.get('protein_g', 0) for meal in logged_meals),
+            'fat_g': sum(meal.get('fat_g', 0) for meal in logged_meals)
+        }
+        
+        # Get total targets
+        total = meal_plan['total_nutrition']
+        
+        # Calculate remaining nutrition
+        remaining = {
+            'calories': max(0, total['total_daily_calories'] - consumed['calories']),
+            'carbs_g': max(0, total['total_daily_carbs_g'] - consumed['carbs_g']),
+            'protein_g': max(0, total['total_daily_protein_g'] - consumed['protein_g']),
+            'fat_g': max(0, total['total_daily_fat_g'] - consumed['fat_g'])
+        }
+        
+        # Calculate progress percentages
+        progress = {
+            'calories': (consumed['calories'] / total['total_daily_calories']) * 100 if total['total_daily_calories'] > 0 else 0,
+            'carbs_g': (consumed['carbs_g'] / total['total_daily_carbs_g']) * 100 if total['total_daily_carbs_g'] > 0 else 0,
+            'protein_g': (consumed['protein_g'] / total['total_daily_protein_g']) * 100 if total['total_daily_protein_g'] > 0 else 0,
+            'fat_g': (consumed['fat_g'] / total['total_daily_fat_g']) * 100 if total['total_daily_fat_g'] > 0 else 0
+        }
+        
+        return {
+            'total': total,
+            'consumed': consumed,
+            'remaining': remaining,
+            'progress': progress,
+            'last_updated': session['last_updated'].isoformat(),
+            'logged_meals_count': len(logged_meals)
+        }
+    
+    def reset_user_session(self, user_id):
+        """
+        Reset a user's session data
+        
+        Args:
+            user_id: User identifier
+            
+        Returns:
+            Success status
+        """
+        if user_id in self.user_sessions:
+            del self.user_sessions[user_id]
+            return True
+        return False
 
 if __name__ == "__main__":
     # Initialize AI model
