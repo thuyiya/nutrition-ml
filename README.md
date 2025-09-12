@@ -59,7 +59,92 @@ The server will be running on `http://localhost:5001`
 ```http
 POST /api/generate-meal-plan
 Content-Type: application/json
+```
 
+**Request Body Parameters:**
+
+| Parameter | Type | Required | Description | Example Values |
+|-----------|------|----------|-------------|----------------|
+| `age` | integer | ✅ | Athlete's age | 18-65 |
+| `gender` | string | ✅ | Gender | "M", "F" |
+| `height_cm` | float | ✅ | Height in centimeters | 150-220 |
+| `weight_kg` | float | ✅ | Weight in kilograms | 40-150 |
+| `body_fat_percentage` | float | ✅ | Body fat percentage | 5-35 |
+| `sport_league` | string | ❌ | Primary sport | See Sport Options below |
+| `activity_level` | string | ❌ | Activity level | See Activity Levels below |
+| `goal` | string | ❌ | Fitness goal | See Goals below |
+| `time_range_days` | integer | ❌ | Plan duration | 7-365 |
+| `exercise_schedule` | array | ❌ | Exercise sessions | See Exercise Schedule below |
+
+**Available Sport Options:**
+| Sport | Description | Sport | Description |
+|-------|------------|-------|------------|
+| `Basketball` | Professional basketball | `Cricket` | Cricket |
+| `Football` | American football | `Soccer` | Association football |
+| `Tennis` | Tennis | `Swimming- Distance` | Long-distance swimming |
+| `Swimming- Sprint` | Sprint swimming | `Boxing` | Boxing |
+| `Cycling` | Cycling | `Baseball` | Baseball |
+| `Ice Hockey` | Ice hockey | `Rugby` | Rugby |
+| `Volleyball` | Volleyball | `Golf` | Golf |
+| `General Fitness` | General fitness training | `Recreational Athlete` | Recreational sports |
+
+**Available Activity Levels:**
+| Level | Description | Multiplier |
+|-------|-------------|------------|
+| `Low` | Minimal exercise, mostly sedentary | 1.2 |
+| `Moderate` | Regular exercise 3-4 times per week | 1.4 |
+| `High` | Intensive exercise 5-6 times per week | 1.6 |
+| `Very High` | Professional athlete level training | 1.8 |
+
+**Available Goals:**
+| Goal ID | Name | Description | Focus |
+|---------|------|-------------|-------|
+| `general_wellness` | General Wellness | Maintain overall health and fitness | Balanced nutrition |
+| `weight_loss` | Weight Loss | Lose weight and reduce body fat | Calorie deficit |
+| `weight_gain` | Weight Gain | Gain weight and build mass | Calorie surplus |
+| `muscle_building` | Muscle Building | Build muscle mass and strength | High protein |
+| `performance_optimization` | Performance Optimization | Optimize athletic performance | Sport-specific |
+| `endurance_improvement` | Endurance Improvement | Improve cardiovascular endurance | Carb-focused |
+| `strength_improvement` | Strength Improvement | Increase muscular strength | Protein + calories |
+
+**Exercise Schedule Format:**
+```json
+"exercise_schedule": [
+  {
+    "type": "Skills Training",
+    "duration_minutes": 90,
+    "intensity": "High",
+    "time": "9:00 AM"
+  }
+]
+```
+
+**Available Exercise Types:**
+| Type | Description | Typical Duration |
+|------|-------------|------------------|
+| `Skills Training` | Sport-specific skill practice | 60-120 min |
+| `Fitness Training` | General fitness workout | 45-90 min |
+| `Strength Training` | Weight training session | 60-90 min |
+| `Cardio` | Cardiovascular exercise | 30-60 min |
+| `Endurance Training` | Long-duration training | 90-180 min |
+| `Recovery Session` | Light recovery workout | 30-45 min |
+| `Competition` | Competitive event | 60-180 min |
+| `Practice Match` | Practice game/scrimmage | 90-120 min |
+
+**Available Intensity Levels:**
+| Intensity | Description | Heart Rate Zone | RPE Scale |
+|-----------|-------------|----------------|-----------|
+| `Low` | Light effort, easy conversation | 50-60% | 1-3 |
+| `Moderate` | Moderate effort, some difficulty talking | 60-70% | 4-6 |
+| `High` | Hard effort, difficult to talk | 70-85% | 7-8 |
+| `Very High` | Maximum effort, cannot talk | 85-100% | 9-10 |
+
+---
+
+### **Example Requests**
+
+#### **Example 1: Professional Cricket Player**
+```json
 {
   "age": 28,
   "gender": "M",
@@ -76,12 +161,115 @@ Content-Type: application/json
       "duration_minutes": 90,
       "intensity": "High",
       "time": "9:00 AM"
+    },
+    {
+      "type": "Fitness Training",
+      "duration_minutes": 60,
+      "intensity": "Moderate",
+      "time": "3:00 PM"
     }
   ]
 }
 ```
 
-**Response:**
+#### **Example 2: Recreational Basketball Player**
+```json
+{
+  "age": 25,
+  "gender": "F",
+  "height_cm": 165,
+  "weight_kg": 60,
+  "body_fat_percentage": 20,
+  "sport_league": "Basketball",
+  "activity_level": "Moderate",
+  "goal": "weight_loss",
+  "time_range_days": 14,
+  "exercise_schedule": [
+    {
+      "type": "Skills Training",
+      "duration_minutes": 60,
+      "intensity": "Moderate",
+      "time": "6:00 PM"
+    }
+  ]
+}
+```
+
+#### **Example 3: Endurance Athlete**
+```json
+{
+  "age": 32,
+  "gender": "M",
+  "height_cm": 180,
+  "weight_kg": 75,
+  "body_fat_percentage": 12,
+  "sport_league": "Swimming- Distance",
+  "activity_level": "Very High",
+  "goal": "endurance_improvement",
+  "time_range_days": 21,
+  "exercise_schedule": [
+    {
+      "type": "Endurance Training",
+      "duration_minutes": 120,
+      "intensity": "High",
+      "time": "6:00 AM"
+    },
+    {
+      "type": "Recovery Session",
+      "duration_minutes": 45,
+      "intensity": "Low",
+      "time": "7:00 PM"
+    }
+  ]
+}
+```
+
+#### **Example 4: Strength Athlete**
+```json
+{
+  "age": 24,
+  "gender": "F",
+  "height_cm": 170,
+  "weight_kg": 65,
+  "body_fat_percentage": 18,
+  "sport_league": "General Fitness",
+  "activity_level": "High",
+  "goal": "muscle_building",
+  "time_range_days": 30,
+  "exercise_schedule": [
+    {
+      "type": "Strength Training",
+      "duration_minutes": 90,
+      "intensity": "High",
+      "time": "7:00 AM"
+    },
+    {
+      "type": "Cardio",
+      "duration_minutes": 30,
+      "intensity": "Moderate",
+      "time": "6:00 PM"
+    }
+  ]
+}
+```
+
+#### **Example 5: Rest Day (No Exercise)**
+```json
+{
+  "age": 30,
+  "gender": "M",
+  "height_cm": 175,
+  "weight_kg": 70,
+  "body_fat_percentage": 15,
+  "sport_league": "Tennis",
+  "activity_level": "Moderate",
+  "goal": "general_wellness",
+  "time_range_days": 7,
+  "exercise_schedule": []
+}
+```
+
+**Response Format:**
 ```json
 {
   "status": "success",
@@ -92,16 +280,25 @@ Content-Type: application/json
       "total_daily_protein_g": 112.8,
       "total_daily_fat_g": 220.6
     },
-    "exercise_count": 1,
+    "exercise_count": 2,
     "meal_plan": [
       {
         "meal_type": "Pre-Exercise Snack",
-        "time": "8:00 AM",
+        "time": "8:30 AM",
         "calories": 316.0,
         "carbs_g": 26.0,
         "protein_g": 11.3,
         "fat_g": 22.1,
         "percentage": 10.0
+      },
+      {
+        "meal_type": "Post-Exercise Meal",
+        "time": "11:00 AM",
+        "calories": 948.0,
+        "carbs_g": 77.9,
+        "protein_g": 33.9,
+        "fat_g": 66.2,
+        "percentage": 30.0
       }
     ]
   }
@@ -112,7 +309,10 @@ Content-Type: application/json
 ```http
 POST /api/predict-nutrition
 Content-Type: application/json
+```
 
+**Request Body:**
+```json
 {
   "age": 28,
   "gender": "M",
@@ -121,6 +321,19 @@ Content-Type: application/json
   "body_fat_percentage": 15,
   "goal": "weight_loss",
   "time_range_days": 30
+}
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "nutrition_needs": {
+    "total_daily_calories": 1901.5,
+    "total_daily_carbs_g": 135.2,
+    "total_daily_protein_g": 97.4,
+    "total_daily_fat_g": 139.0
+  }
 }
 ```
 
@@ -141,24 +354,15 @@ GET /api/sports
 GET /api/activity-levels
 ```
 
+#### **Get Example Request Format**
+```http
+GET /api/example-request
+```
+
 #### **Health Check**
 ```http
 GET /health
 ```
-
----
-
-## 🎯 **Supported Goals**
-
-| Goal ID | Name | Description |
-|---------|------|-------------|
-| `general_wellness` | General Wellness | Maintain overall health and fitness |
-| `weight_loss` | Weight Loss | Lose weight and reduce body fat |
-| `weight_gain` | Weight Gain | Gain weight and build mass |
-| `muscle_building` | Muscle Building | Build muscle mass and strength |
-| `performance_optimization` | Performance Optimization | Optimize athletic performance |
-| `endurance_improvement` | Endurance Improvement | Improve cardiovascular endurance |
-| `strength_improvement` | Strength Improvement | Increase muscular strength |
 
 ---
 
