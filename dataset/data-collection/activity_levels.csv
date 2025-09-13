@@ -1,0 +1,6 @@
+Activity Level,Calorie Multiplier,Description,Subtitle,Key
+Very Light,1.2,No Activity,Sitting most of the day,none
+Injured - Not Active,1.2,No Activity,No exercise,injured
+Light,1.37,Light Activity,A mix of sitting standing and light activity,light
+Moderate,1.54,Moderate Activity,Continuous gentle to moderate activity,moderate
+Heavy,1.67,Heavy Activity,Strenuous activity throughout the day,heavy 

@@ -1,0 +1,82 @@
+Member Details,,,,Weght  Goal details,,,,,,,,,,,,,,Sport Of Focus,
+Gender,male,,,Weght Goal,0,>0,1,<0,1,,,,,,,,,name,Golf
+Weight (Kg),119.38,170 lbs,,Type,maintain,gain,gain,lose,lose,N/A,,,,,,,,type,power
+Height (cm),192.408,62 inch,,lbs,0,0.5,1,0.5,1,0,,,,,,,,carbWeightRatio,4
+Age,29.04960296,1992-05-19,,,,,,,,,,,,,,,,proteinWeightRatio,1.5
+BodyFat,0,,,Weght  Goal Calories,,,,,,,,,,,,,,carbsLose,2.1
+ActivityLevelId,moderate,,,lbs,1,!= 1,1,!=1,,,,,,,,,,carbsGain,3.5
+WeightGoal,0,,,Type,gain,gain,lose,lose,,,,,,,,,,carbsMaintain,2.8
+BodyFatPercentag,0,,,Calories,500,250,-500,-250,,,,,,,,,,proteinLose,1.2
+FocusSport,Golf,,,,,,,,,,,,,,,,,proteinGain,1.7
+,,,,,,,,,,,,,,,,,,proteinMaintain,1.45
+,,,,Gender Calories,,,,,,,,,,,,,,carbRatio,0
+Exercise Details,,,,Male,66.473 + 13.7516 * weight + 5.0033 * height - 6.755 * age,,,,,,,No exercise,,,,,,proteinRatio,0
+Intensity,moderate,,,FeMale,655.0955 + 9.5634 * weight + 1.8496 * height - 4.6756 * age,,,,,,,,,,,,,moderateHR,90
+Start Time,9:30,,,,,,,,,,,Calculation For Calories,,,,,,intenseHR,110
+End Time,10:30,,,Body Fat,,,,,,,,ActivityLevelCalorieMultiplier,1.54,,,,,,
+Sport,name,"""X"" 1 - Moderate",,Lean Body Mass =,,weight - (body Fat * weight) / 100,,,,,,LeanBodyMass,Weight - (BodyFatPercentag * Weight) / 100 = ,,,,,,
+,type,power,,Total Calories,,(Total Calories + (500 + 22 * Lean Body Mass)) / 2,,,,,,Weght  Goal Calories,0,,,,,,
+,carbWeightRatio,7,,Activity Levels,,,,,,,,,,,,,,,
+,proteinWeightRatio,1.5,,id,heavy,light,moderate,none,very heavy,,,Algorithm Factor,Algorithm Calculation,,Total,Total Calories ,,,
+,carbsLose,2.8,,description,Heavy Activity,Light Activity,Moderate Activity,No Activity,Very Heavy Activity,,,Gender,"66.473 + 13.7516 * Weight + 5.0033 
+* Height - 6.755 * Age",,2474.583886,2474.583886,,,
+,carbsGain,4.2,,calorieMultiplier,1.67,1.37,1.54,1.2,1.8,,,,,,,,,,
+,carbsMaintain,3.5,,,,,,,,,,Body Fat (if > 0),(500 + 22 * LeanBodyMass) / 2,,0,2474.583886,,,
+,proteinLose,1.7,,Activity,,,,,,,,Activity (if ActivityLevelCalorieMultiplier > 0),TotalCalories * ActivityLevelCalorieMultiplier,,,3810.859185,,,
+,proteinGain,2.2,,Total Calories =,,Total Calories * Activity Level Carb Multiplier,,,,,,Weight Goal,0,,0,3810.859185,,,
+,proteinMaintain,2.2,,,,,,,,,,,,,,3810.859185,,,
+,carbRatio,0.8,,Member Sport Modifiers By Activity Level,,,,,,,,,,,,,,,
+,proteinRatio,0.35,,,,,,,,,,Calculation For Carbs,,,,,,,
+,moderateHR,125,,SportType,power,Focus Of Sport Type,,,,,,SportCarbohydrates,2.8,,,,,,
+,intenseHR,160,,WeightGoalType,Maintain,Weight Goal Type in lower case,,,,,,,,,,,,,
+,METs,8,,SportCarbohydrates,2.8,carbs[WeightGoalType] = carbsMaintain of Focus sport,,,,,,Algorithm Factor,Algorithm Calculation,,Total,Total Carbs ,,,
+,sport is copied from football,,,SportProteins,1.45,protein[WeightGoalType] = proteinMaintain,,,,,,Focus Sport Activity Level Factor,Weight * SportCarbohydrates,,215.909792,215.909792,,,
+Total Calculation,,,,,,,,,,,,,,,,215.909792,,,
+Total Recommended Calories,,2642,,,,,,,,,,,,,,,,,
+Total Recommended Carbs,,216,,With One exercise,"""X"" LOGIC",,,,,,,,,,,,,,
+Total Recomended Protein,,112,,,,,,,,,,Calculation For Proteins,,,,,,,
+,,,,Calculation For Calories,,,,,,,,SportProteins,1.45,,,,,,
+,,,,METs,6,,,,,,,,,,,,,,
+With One Exercise,,,,CaloriesForMinute,METs * 3.5 * (Weight) /200 =,,26.93712,,,,,Algorithm Factor,Algorithm Calculation,,Total,Total Carbs ,,,
+Total Without Pre Calculation,,,,ExerciseDuration,60 minute,,,,,,,Focus Sport Activity Level Factor,Weight * SportProteins,,111.810428,111.810428,,,
+Total Recommended Calories,,2642.123266,,Total Calories ,2642.123266,Same calculation from no exercise,,,,,,,,,,111.810428,,,
+Total Recommended Carbs,,215.909792,,,,,,,,,,,,,,,,,
+Total Recomended Protein,,111.810428,,Algorithm Factor,Algorithm Calculation,,Total,Total Calories ,,,,,,,,,,,
+,,,,"""X"" Logic",CaloriesForMinute * ExerciseDuration,,752.128,3127.920298,,,,With One exercise,Pre Calculation,,,,,,
+,,,,,,,,3127.920298,,,,,,,,,,,
+Total With Pre Calculation,,,,,,,,,,,,Calculation For Calories,,,,,,,
+Total Recommended Calories,,2847,,,,,,,,,,,,,,,,,
+Total Recommended Carbs,,244,,,,,,,,,,Same calculation from no exercise,,,,,,,
+Total Recomended Protein,,112,,,,,,,,,,Total Calories = 2642.123266,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,Pre Calculation,,,,,,,
+,,,,,,,,,,,,Modarate Exercise sport is Football Duration 1h Start At 6AM,,,,,,,
+,,,,,,,,,,,,,,2847,,,,,
+,,,,,,,,,,,,,,244,,,,,
+,,,,,,,,,,,,,,112,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Cal,Carb,Protein,,,,,,,,,,,,,,,,,
+2642,216,112,No Exercise,,,,,,,,,,,,,,,,
+23.58928571,1.928571429,1,Ratio,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Calorie Increased by,1504.256,  Calorie Increased/23.58 =,63.76861166,,,,,,,,,,,,,,,,
+1504.256,122.9823225,63.76861166,Increased With Ratio,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+4146.256,338.9823225,175.7686117,New Totals,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+4146.256,338.9823225,175.7686117,Total with recovery,,,,,,,,,,,,,,,,
