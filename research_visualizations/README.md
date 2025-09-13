@@ -33,7 +33,7 @@ This directory contains comprehensive visualizations that support the AI-powered
 **Purpose**: Complete technical system architecture
 **Key Components**: Data processing, ML models, adaptive engine
 **Research Section**: System Design & Implementation
-**Note**: Needs update to include the new Meal Logging System layer
+**Note**: Updated to include enhanced Activity Level Processing and Adaptive Engine Layer
 
 ### **6. Research Validation Summary**
 **File**: `research_validation_summary.png`
@@ -143,3 +143,16 @@ For questions about these visualizations or requests for additional analysis, pl
 **Last Updated**: September 2025
 **Version**: 1.1
 **Status**: ✅ Research Complete
+
+
+## 🔄 **Recent Updates**
+
+The following visualizations have been updated to reflect the new activity level distribution and recalculated meal plans:
+
+1. **Data Collection Overview**: Updated to show the new activity level distribution
+2. **Model Performance Comparison**: Updated with the performance metrics of the retrained model
+3. **Comprehensive Dataset Overview**: Updated to reflect the changes in the dataset
+4. **Feature Importance Analysis**: Updated to show the impact of activity level on feature importance
+5. **System Architecture Diagram**: Updated to include enhanced Activity Level Processing
+
+Last updated: 2025-09-13

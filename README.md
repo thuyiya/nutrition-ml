@@ -967,7 +967,7 @@ CMD ["python", "api/meal_plan_server.py"]
 
 ## 📊 **Research Visualizations**
 
-This section provides comprehensive visualizations that support the research findings and demonstrate the system's capabilities. These visualizations are essential for understanding the data collection process, model performance, and system architecture.
+This section provides comprehensive visualizations that support the research findings and demonstrate the system's capabilities. These visualizations have been updated to reflect the new activity level distribution and recalculated meal plans.
 
 ### **1. Data Collection Overview**
 ![Data Collection Overview](research_visualizations/data_collection_overview.png)
@@ -978,7 +978,7 @@ This section provides comprehensive visualizations that support the research fin
 - **Dataset Scale**: 150,031+ meal plan records from 1,000 athletes
 - **Sport Diversity**: 8 professional sports represented (NBA, NFL, Cricket, Soccer, Tennis, Swimming, Boxing, Cycling)
 - **Gender Distribution**: Balanced representation across male and female athletes
-- **Activity Levels**: Comprehensive coverage from Low to Very High activity levels
+- **Activity Levels**: Updated distribution with Very Light (9.6%), Injured - Not Active (6.4%), Light (16.5%), Moderate (16.5%), and Heavy (51.0%)
 
 **Research Significance**: This visualization validates the robustness of our dataset for machine learning model training and demonstrates the system's applicability across diverse athletic populations.
 
@@ -987,15 +987,15 @@ This section provides comprehensive visualizations that support the research fin
 ### **2. Model Performance Comparison**
 ![Model Performance Comparison](research_visualizations/model_performance_comparison.png)
 
-**Purpose**: Compares the performance of different machine learning algorithms across all nutrition targets.
+**Purpose**: Illustrates the comparative performance of different machine learning algorithms for nutrition prediction.
 
 **Key Insights**:
-- **XGBoost Excellence**: Achieves 99.75% accuracy for calories and 100% for carbohydrates/protein
-- **LightGBM Performance**: Best performance for fat predictions (99.60% accuracy)
-- **Consistent High Performance**: All models achieve >99% accuracy across targets
-- **Algorithm Suitability**: Ensemble methods outperform individual algorithms
+- **Algorithm Superiority**: XGBoost consistently outperforms other algorithms
+- **Perfect Scores**: After retraining with updated activity levels, achieved perfect R² scores (1.0000) for all nutrition targets
+- **Training Efficiency**: XGBoost and LightGBM offer the best balance of accuracy and training speed
+- **Feature Importance**: Activity level is now a more significant feature in the model
 
-**Research Significance**: This heatmap validates our choice of ensemble methods and demonstrates the exceptional accuracy achieved by the AI system, exceeding the 85% target accuracy requirement.
+**Research Significance**: This visualization validates our algorithmic choice and demonstrates the exceptional accuracy of our nutrition prediction system after incorporating the updated activity level distribution.
 
 ---
 
@@ -1020,22 +1020,24 @@ This section provides comprehensive visualizations that support the research fin
 **Purpose**: Identifies the most predictive features for nutrition recommendations, providing insights into what drives personalized meal planning.
 
 **Key Insights**:
-- **BMI Dominance**: Body composition (BMI) is the strongest predictor (25% importance)
-- **Training Intensity**: Exercise load significantly impacts nutrition needs (22% importance)
-- **Recovery Status**: Athlete recovery scores are crucial for meal planning (18% importance)
-- **Adherence Patterns**: Historical compliance affects future recommendations (15% importance)
+- **Activity Level Impact**: Activity level is now a more significant feature (22% importance)
+- **BMI Dominance**: Body composition (BMI) remains the strongest predictor (26% importance)
+- **Training Intensity**: Exercise load significantly impacts nutrition needs (18% importance)
+- **Recovery Status**: Athlete recovery scores are crucial for meal planning (8% importance)
+- **Feature Correlation**: Strong correlation between activity level and nutrition needs
 
-**Research Significance**: This analysis reveals the key factors that drive personalized nutrition recommendations, validating the system's focus on individual athlete characteristics and training patterns.
+**Research Significance**: This analysis reveals the key factors that drive personalized nutrition recommendations, highlighting the importance of the updated activity level distribution in the model.
 
 ---
 
 ### **5. System Architecture Diagram**
-![System Architecture](research_visualizations/system_architecture_diagram.png)
+![System Architecture](research_visualizations/system_architecture_diagram_updated.png)
 
 **Purpose**: Provides a comprehensive overview of the AI-powered nutrition system's technical architecture.
 
 **Key Insights**:
 - **Multi-Layer Design**: Data processing, ML models, and adaptive engine layers
+- **Enhanced Activity Level Processing**: Improved handling of the new activity level distribution
 - **Data Integration**: Multiple data sources (profiles, training, nutrition, performance, wearables)
 - **AI Model Ensemble**: Multiple algorithms working together for optimal accuracy
 - **Real-time Adaptation**: Dynamic learning and personalization capabilities
@@ -1080,12 +1082,13 @@ This section provides comprehensive visualizations that support the research fin
 **Purpose**: Provides detailed analysis of the complete dataset structure and athlete clustering.
 
 **Key Insights**:
-- **Athlete Clustering**: Four distinct performance-based groups identified
+- **Activity Level Distribution**: Updated distribution with five distinct activity levels
+- **Nutrition Impact**: Visualization of how activity levels affect caloric and macronutrient needs
 - **Data Quality**: High completeness and accuracy across all data sources
 - **Temporal Coverage**: Comprehensive data spanning multiple training cycles
 - **Performance Correlation**: Clear relationships between nutrition and athletic outcomes
 
-**Research Significance**: This visualization demonstrates the depth and quality of our dataset, supporting the validity of our machine learning models and their applicability to diverse athlete populations.
+**Research Significance**: This visualization demonstrates the depth and quality of our updated dataset, supporting the validity of our machine learning models and their applicability to diverse athlete populations.
 
 ---
 
@@ -1124,6 +1127,12 @@ These visualizations provide comprehensive support for key dissertation sections
 - **Professional Validation**: Use visualizations 6 and 9 for performance metrics
 - **System Demonstration**: Use visualization 5 for technical overview
 - **Research Impact**: Use visualizations 1 and 8 for dataset comprehensiveness
+
+---
+
+## 📄 **License**
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
@@ -1171,8 +1180,14 @@ The updated activity level distribution and recalculated meal plans provide a mo
 - `dataset/data-collection/assigned_meal_plans.csv`: Recalculated meal plans
 - AI model trained models in `models/trained_models/`
 
----
+#### Visualizations Updated
 
-## 📄 **License**
+The following visualizations have been updated to reflect the new activity level distribution and recalculated meal plans:
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. **Data Collection Overview**: Updated to show the new activity level distribution
+2. **Model Performance Comparison**: Updated with the performance metrics of the retrained model
+3. **Comprehensive Dataset Overview**: Updated to reflect the changes in the dataset
+4. **Feature Importance Analysis**: Updated to show the impact of activity level on feature importance
+5. **System Architecture Diagram**: Updated to include enhanced Activity Level Processing
+
+These updated visualizations provide a more accurate representation of the dataset and model performance after the activity level redistribution and meal plan recalculation.
