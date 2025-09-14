@@ -1,0 +1,24 @@
+{
+    "goal": "weight_loss",
+    "nutrition_needs": {
+        "total_daily_calories": 2352.751953125,
+        "total_daily_carbs_g": 143.02273559570312,
+        "total_daily_fat_g": 172.21112060546875,
+        "total_daily_protein_g": 97.28190612792969
+    },
+    "status": "success",
+    "time_range_days": 30,
+    "user_profile": {
+        "activity_level": "Moderate",
+        "adherence_rate": 0.8,
+        "age": 28,
+        "body_fat_percentage": 15.0,
+        "competition_level": "Recreational",
+        "gender": "M",
+        "height_cm": 175.0,
+        "sport_league": "General Fitness",
+        "training_experience_years": 5,
+        "user_scenario": "fitness_enthusiast",
+        "weight_kg": 70.0
+    }
+}

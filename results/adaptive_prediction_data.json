@@ -1,0 +1,120 @@
+{
+    "payload": {
+        "age": 28,
+        "gender": "M",
+        "height_cm": 175,
+        "weight_kg": 65,
+        "body_fat_percentage": 12,
+        "sport_league": "Cricket",
+        "activity_level": "High",
+        "goal": "performance_optimization",
+        "time_range_days": 30,
+        "exercise_schedule": [
+          {
+            "type": "Skills Training",
+            "duration_minutes": 100,
+            "intensity": "High",
+            "time": "9:00 AM"
+          }
+        ],
+        "meal_logging_data": [
+             {
+            "meal_type": "Pre-Exercise Snack",
+            "consumption_time": "8:30 AM",
+            "calories": 450,
+            "carbs_g": 55,
+            "protein_g": 25,
+            "fat_g": 18,
+            "consumed": "90%"
+          },
+          {
+            "meal_type": "Lunch",
+            "consumption_time": "1:30 PM",
+            "calories": 200,
+            "carbs_g": 55,
+            "protein_g": 25,
+            "fat_g": 18,
+            "consumed": "90%"
+          }
+        ],
+        "user_id": "1"
+      },
+      "response": {
+        "adaptive_meal_plan": {
+            "adaptation_status": "no_adaptation_needed",
+            "exercise_count": 1,
+            "generated_at": "2025-09-14T09:52:34.729930",
+            "goal": "performance_optimization",
+            "meal_plan": [
+                {
+                    "calories": 284.8999938964844,
+                    "carbs_g": 24.299999237060547,
+                    "fat_g": 16.600000381469727,
+                    "meal_type": "Pre-Exercise Snack",
+                    "percentage": 10.0,
+                    "protein_g": 10.699999809265137,
+                    "time": "8:00 AM"
+                },
+                {
+                    "calories": 854.5999755859375,
+                    "carbs_g": 72.9000015258789,
+                    "fat_g": 49.900001525878906,
+                    "meal_type": "Post-Exercise Meal",
+                    "percentage": 30.0,
+                    "protein_g": 32.20000076293945,
+                    "time": "11:00 AM"
+                },
+                {
+                    "calories": 854.5999755859375,
+                    "carbs_g": 72.9000015258789,
+                    "fat_g": 49.900001525878906,
+                    "meal_type": "Lunch",
+                    "percentage": 30.0,
+                    "protein_g": 32.20000076293945,
+                    "time": "3:00 PM"
+                },
+                {
+                    "calories": 284.8999938964844,
+                    "carbs_g": 24.299999237060547,
+                    "fat_g": 16.600000381469727,
+                    "meal_type": "Recovery Snack",
+                    "percentage": 10.0,
+                    "protein_g": 10.699999809265137,
+                    "time": "6:00 PM"
+                },
+                {
+                    "calories": 569.7999877929688,
+                    "carbs_g": 48.599998474121094,
+                    "fat_g": 33.20000076293945,
+                    "meal_type": "Dinner",
+                    "percentage": 20.0,
+                    "protein_g": 21.399999618530273,
+                    "time": "8:00 PM"
+                }
+            ],
+            "time_range_days": 30,
+            "total_nutrition": {
+                "total_daily_calories": 2848.825927734375,
+                "total_daily_carbs_g": 242.94708251953125,
+                "total_daily_fat_g": 166.19784545898438,
+                "total_daily_protein_g": 107.23604583740234
+            },
+            "user_profile": {
+                "activity_level": "High",
+                "adherence_rate": 0.8,
+                "age": 28,
+                "body_fat_percentage": 12.0,
+                "competition_level": "Recreational",
+                "gender": "M",
+                "height_cm": 175.0,
+                "sport_league": "Cricket",
+                "training_experience_years": 5,
+                "user_id": "1",
+                "user_scenario": "fitness_enthusiast",
+                "weight_kg": 65.0
+            }
+        },
+        "current_time": "2025-09-14T09:52:34.726749",
+        "status": "success"
+    }
+}

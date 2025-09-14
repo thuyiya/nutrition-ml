@@ -1,0 +1,75 @@
+{
+    "meal_plan": {
+        "exercise_count": 1,
+        "generated_at": "2025-09-14T09:51:38.146638",
+        "goal": "performance_optimization",
+        "meal_plan": [
+            {
+                "calories": 293.5,
+                "carbs_g": 31.799999237060547,
+                "fat_g": 16.899999618530273,
+                "meal_type": "Pre-Exercise Snack",
+                "percentage": 10.0,
+                "protein_g": 12.800000190734863,
+                "time": "8:00 AM"
+            },
+            {
+                "calories": 880.5,
+                "carbs_g": 95.30000305175781,
+                "fat_g": 50.79999923706055,
+                "meal_type": "Post-Exercise Meal",
+                "percentage": 30.0,
+                "protein_g": 38.5,
+                "time": "11:00 AM"
+            },
+            {
+                "calories": 880.5,
+                "carbs_g": 95.30000305175781,
+                "fat_g": 50.79999923706055,
+                "meal_type": "Lunch",
+                "percentage": 30.0,
+                "protein_g": 38.5,
+                "time": "3:00 PM"
+            },
+            {
+                "calories": 293.5,
+                "carbs_g": 31.799999237060547,
+                "fat_g": 16.899999618530273,
+                "meal_type": "Recovery Snack",
+                "percentage": 10.0,
+                "protein_g": 12.800000190734863,
+                "time": "6:00 PM"
+            },
+            {
+                "calories": 587.0,
+                "carbs_g": 63.5,
+                "fat_g": 33.900001525878906,
+                "meal_type": "Dinner",
+                "percentage": 20.0,
+                "protein_g": 25.700000762939453,
+                "time": "8:00 PM"
+            }
+        ],
+        "time_range_days": 30,
+        "total_nutrition": {
+            "total_daily_calories": 2935.012939453125,
+            "total_daily_carbs_g": 317.7032775878906,
+            "total_daily_fat_g": 169.3288116455078,
+            "total_daily_protein_g": 128.41238403320312
+        },
+        "user_profile": {
+            "activity_level": "High",
+            "adherence_rate": 0.8,
+            "age": 28,
+            "body_fat_percentage": 20.0,
+            "competition_level": "Recreational",
+            "gender": "M",
+            "height_cm": 175.0,
+            "sport_league": "Cricket",
+            "training_experience_years": 5,
+            "user_scenario": "fitness_enthusiast",
+            "weight_kg": 80.0
+        }
+    },
+    "status": "success"
+}
