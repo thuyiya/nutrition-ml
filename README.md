@@ -648,7 +648,7 @@ This test script will:
   "goal": "performance_optimization",
   "time_range_days": 30,
   "exercise_schedule": [
-    {
+{
       "type": "Skills Training",
       "duration_minutes": 300,
       "intensity": "High",

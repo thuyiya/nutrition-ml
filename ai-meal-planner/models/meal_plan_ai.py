@@ -747,7 +747,7 @@ class MealPlanAI:
         if user_id in self.user_sessions:
             del self.user_sessions[user_id]
             return True
-        return False
+            return False
 
 if __name__ == "__main__":
     # Initialize AI model
